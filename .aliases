@@ -19,7 +19,6 @@ alias en="trans :en"
 # Shell
 alias la="ls -halk"
 alias md='mkdir -p'
-alias grep='ack'
 
 # Vim
 alias vimrc="vim ~/.vimrc"
