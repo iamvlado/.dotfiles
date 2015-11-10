@@ -8,6 +8,10 @@ ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
 plugins=(git frontend-search last-working-dir web-search node osx sudo npm brew extract z)
 
+
+# Allow <c-s> in Vim
+vim() STTY=-ixon command vim "$@"
+
 # Add sourses
 export DOTFILES=$HOME/.dotfiles
 
