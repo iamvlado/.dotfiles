@@ -4,6 +4,7 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Editors
 alias a='atom'
+alias v='vim'
 
 # Gulp
 alias g="gulp"
