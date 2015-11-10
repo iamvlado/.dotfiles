@@ -179,9 +179,7 @@
 
     Bundle 'scrooloose/syntastic'
         let g:syntastic_javascript_checkers = ['jshint']
-        let g:syntastic_javascript_jshint_exec = '~/npm-global/lib/node_modules/jshint/bin/jshint'
         let g:syntastic_jade_checkers = ['jade_lint']
-        let g:syntastic_jade_jade_lint_exec = '~/npm-global/lib/node_modules/jade-lint/bin/jade-lint'
         let g:syntastic_check_on_open=1 " Enable autochecks
         let g:syntastic_enable_signs=1
         let g:syntastic_error_symbol='✗'
