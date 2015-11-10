@@ -1,0 +1,25 @@
+# ZSH
+alias zshrc="vim ~/.zshrc"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+
+# Editors
+alias a='atom'
+
+# Gulp
+alias g="gulp"
+alias b="gulp build"
+alias c="gulp clean"
+alias d="gulp deploy"
+
+# Translate-shell
+alias ru="trans :ru"
+alias en="trans :en"
+
+# Shell
+alias la="ls -halk"
+alias md='mkdir -p'
+alias grep='ack'
+
+# Vim
+alias vimrc="vim ~/.vimrc"
+alias :q='exit'
