@@ -37,7 +37,7 @@
 
 " Search
   set incsearch       " Find the next match as we type the search
-  "set hlsearch        " Highlight searches by default
+  set hlsearch        " Highlight searches by default
   set ignorecase      " Ignore case when searching...
   set smartcase       " ...unless we type a capital
 
@@ -72,7 +72,12 @@
 " Shortcuts
     let mapleader = ","
 
-  " cc/vv - copy/paste
+" ,f
+     " Fast grep
+     " Recursive search in current directory for matches with current word
+     nnoremap <Leader>f :<C-u>execute "Ack " . expand("<cword>") <Bar> cw<CR>
+
+" cc/vv - copy/paste
      vmap <Space>c :w !pbcopy<CR><CR>
      nmap <Space>v :r !pbpaste<CR><CR>
 
@@ -119,9 +124,9 @@
       endfunction
       nnoremap <Leader>nm :<C-u>call ToogleRelativeNumber()<cr>
 
-  "" <Esc><Esc>
-      "" Clear the search highlight in Normal mode
-      "nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+  " <Esc><Esc>
+      " Clear the search highlight in Normal mode
+      nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
   " < >
       vnoremap < <gv
@@ -214,6 +219,9 @@
 
   " Perform all your vim insert mode completions with Tab
   Bundle 'ervandew/supertab'
+
+  " Vim plugin for the Perl module / CLI script 'ack'
+  Bundle 'mileszs/ack.vim'
 
   " Shows 'Nth match out of M' at every search
   Bundle 'vim-scripts/IndexedSearch'
