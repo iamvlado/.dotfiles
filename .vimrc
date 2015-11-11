@@ -292,7 +292,6 @@
     " Vim Jade template engine syntax highlighting and indention
     Bundle 'digitaltoad/vim-jade'
       au BufNewFile,BufReadPost *.jade set filetype=jade
-      autocmd FileType jade setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2
 
   " Stylus
     " Syntax Highlighting for Stylus
