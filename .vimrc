@@ -1,4 +1,4 @@
-" Make Vim more useful
+" Make Vim more useful test
   set t_Co=256                   " Use 256 colors in vim
   set nocompatible               " This  must be first, because it changes other options as a side effect
   set backspace=indent,eol,start " Use <c-w> and <c-u>
