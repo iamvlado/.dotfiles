@@ -216,6 +216,7 @@
     let NERDTreeQuitOnOpen=1
     let NERDTreeShowHidden=0
     let NERDTreeMinimalUI=1
+    map <C-n> :NERDTreeToggle<CR>
 
   " Perform all your vim insert mode completions with Tab
   Bundle 'ervandew/supertab'
