@@ -12,6 +12,9 @@ alias b="gulp build"
 alias c="gulp clean"
 alias d="gulp deploy"
 
+# Git
+alias deploy="git subtree push --prefix dist origin gh-pages"
+
 # Translate-shell
 alias ru="trans :ru"
 alias en="trans :en"
