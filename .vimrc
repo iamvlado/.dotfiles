@@ -77,6 +77,10 @@
      " Recursive search in current directory for matches with current word
      nnoremap <Leader>f :<C-u>execute "Ack " . expand("<cword>") <Bar> cw<CR>
 
+  " Move visual block
+     vnoremap J :m '>+1<CR>gv=gv
+     vnoremap K :m '<-2<CR>gv=gv
+
   " <Space>c/<Space>v - copy/paste
      vmap <Space>c :w !pbcopy<CR><CR>
      nmap <Space>v :r !pbpaste<CR><CR>
