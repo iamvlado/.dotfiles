@@ -167,13 +167,6 @@
     :imap jk <Esc>
     :vmap jk <Esc>
 
-  " AutoReload .vimrc
-  " See http://vimcasts.org/episodes/updating-your-vimrc-file-on-the-fly/
-  " Source the vimrc file after saving it
-    if has("autocmd")
-      autocmd! bufwritepost .vimrc source $MYVIMRC
-    endif
-
 " Plugins
   set rtp+=~/.vim/bundle/vundle/
   call vundle#rc()
@@ -186,13 +179,11 @@
   " Insert mode auto-completion for quotes, parens, brackets, etc
   Bundle 'Raimondi/delimitMate'
 
-    Bundle 'scrooloose/syntastic'
-        let g:syntastic_javascript_checkers = ['jshint']
-        let g:syntastic_jade_checkers = ['jade_lint']
-        let g:syntastic_check_on_open=1 " Enable autochecks
-        let g:syntastic_enable_signs=1
-        let g:syntastic_error_symbol='✗'
-        let g:syntastic_warning_symbol='⚠'
+  " :SyntasticCheck :SyntasticToggleMode
+  Bundle 'scrooloose/syntastic'
+    let g:syntastic_javascript_checkers = ['jslint']
+    let g:syntastic_jade_checkers = ['jade_lint']
+    let g:syntastic_check_on_wq = 0
 
   " Precision colorscheme for the vim text editor
   Bundle 'altercation/vim-colors-solarized'
@@ -283,6 +274,9 @@
     Bundle 'pangloss/vim-javascript'
     " Vim syntax file to add some colorations for jQuery keywords and css selectors
     Bundle 'itspriddle/vim-jquery'
+    " React JSX syntax highlighting and indenting for vim
+    Bundle 'mxw/vim-jsx'
+      au BufNewFile,BufReadPost *.jsx set filetype=jsx
 
   " JSON
     " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
