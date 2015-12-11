@@ -2,6 +2,7 @@
   set t_Co=256                   " Use 256 colors in vim
   set nocompatible               " This  must be first, because it changes other options as a side effect
   set backspace=indent,eol,start " Use <c-w> and <c-u>
+  set clipboard=unnamed          " use os x clipboard
   set hidden                     " This makes vim act like all other editors, buffers can exist in the background without being in a window
   set autoread                   " Reload files changed outside vim
   syntax on
@@ -80,10 +81,6 @@
   " Move visual block
      vnoremap J :m '>+1<CR>gv=gv
      vnoremap K :m '<-2<CR>gv=gv
-
-  " <Space>c/<Space>v - copy/paste
-     vmap <Space>c :w !pbcopy<CR><CR>
-     nmap <Space>v :r !pbpaste<CR><CR>
 
   " Ctrl+s
       noremap <C-s> <esc>:w<CR>
