@@ -14,22 +14,21 @@
   set shortmess+=I   " Don't show the intro message starting Vim
   set number         " Display line numbers
   set cursorline     " Highlight the screen line of the cursor
-  set title          " Set title of the window to filename [+=-] (path)
   set scrolloff=8    " Start scrolling when we're 8 lines away from margins
   set laststatus=2   " Last window always has a status line
   set colorcolumn=80 " Bad and extrabad line sizes
   set noshowmode     " Don't show current mode down the bottom
 
 " Ident
+  set tabstop=2                      " Number of spaces that a tab counts for
+  set shiftwidth=2                   " Number of spaces to use for each step of (auto)indent
+  set softtabstop=2                  " Number of spaces that a tab counts for while performing editing operations
+  set expandtab                      " Use spaces instead of tab
+  set autoindent                     " Copy indent from current line when starting a new line
+  set smartindent                    " Only available when compiled with the +smartindent feature
   set list lcs=tab:▸\ ,eol:¬,trail:· " Show invisibles
   set wrap                           " Wrap long lines
   set textwidth=80                   " Longer lines will be broken after white space to get this width
-  set autoindent                     " Copy indent from current line when starting a new line
-  set smartindent                    " Only available when compiled with the +smartindent feature
-  set shiftwidth=2                   " Number of spaces to use for each step of (auto)indent
-  set expandtab                      " Use spaces instead of tab
-  set tabstop=2                      " Number of spaces that a tab counts for
-  set softtabstop=2                  " Number of spaces that a tab counts for while performing editing operations
 
 " Search
   set incsearch       " Find the next match as we type the search
@@ -110,12 +109,6 @@
       nnoremap <leader>s :<C-u>%s//<left>
       vnoremap <leader>s :s//<left>
 
-  " Switch splits
-      nnoremap <C-h> <C-W>h
-      nnoremap <C-j> <C-W>j
-      nnoremap <C-k> <C-W>k
-      nnoremap <C-l> <C-W>l
-
   " Create a new window relative to the current one
       nnoremap <Leader><left>  :<C-u>leftabove  vnew<CR>
       nnoremap <Leader><right> :<C-u>rightbelow vnew<CR>
@@ -127,10 +120,6 @@
       inoremap     <c-e> <c-o>$
       cnoremap <c-a> <home>
       inoremap     <c-a> <c-o>^
-
-  " Shortcuts for moving between tabs
-    noremap [ gT
-    noremap ] gt
 
   " Can be typed even faster than
     :imap jk <Esc>
@@ -190,7 +179,7 @@
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
   Bundle 'othree/javascript-libraries-syntax.vim'
-    let g:used_javascript_libs = 'underscoreackbone,react,flux'
+    let g:used_javascript_libs = 'react,flux'
   Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
     au BufNewFile,BufReadPost *.jsx set filetype=jsx
