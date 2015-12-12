@@ -1,11 +1,10 @@
+" v5
 " Make Vim more useful
-  set t_Co=256                   " Use 256 colors in vim
   set nocompatible               " This  must be first, because it changes other options as a side effect
+  set nobackup noswapfile nowb   " Don't create backup/swp files
+  set visualbell t_vb=           " No beeps, no flashes
   set backspace=indent,eol,start " Use <c-w> and <c-u>
   set clipboard=unnamed          " use os x clipboard
-  set hidden                     " This makes vim act like all other editors, buffers can exist in the background without being in a window
-  set autoread                   " Reload files changed outside vim
-  syntax on
 
 " Encoding
   set encoding=utf-8 nobomb " Character encoding used inside Vim
@@ -33,21 +32,10 @@
   set tabstop=2                      " Number of spaces that a tab counts for
   set softtabstop=2                  " Number of spaces that a tab counts for while performing editing operations
 
-" No beeps, no flashes
-  set visualbell t_vb=
-
 " Search
   set incsearch       " Find the next match as we type the search
   set hlsearch        " Highlight searches by default
   set ignorecase      " Ignore case when searching...
-  set smartcase       " ...unless we type a capital
-
-" Don't create backup/swp files
-  set nobackup noswapfile nowb
-
-" Environment
-  set history=1000                                 " Store lots of history entries: :cmdline and search patterns
-  command! W exec 'w !sudo tee % > /dev/null' | e! " Save file with root permissions
 
 " Disable <Arrow keys>
   inoremap <Up> <NOP>
@@ -85,20 +73,6 @@
   " Ctrl+s
       noremap <C-s> <esc>:w<CR>
       inoremap <C-s> <esc>:w<CR>
-
-  " ,m
-      " Toggle mouse support in Normal mode
-      set mouse=
-      function! ToggleMouse()
-        if &mouse == 'a'
-          set mouse=
-          echo "Mouse usage disabled"
-        else
-          set mouse=a
-          echo "Mouse usage enabled"
-        endif
-      endfunction
-      nnoremap <leader>m :call ToggleMouse()<CR>
 
   " ,nm
       " Switch type of line numbers
@@ -169,20 +143,12 @@
   call vundle#rc()
 
   Bundle 'gmarik/vundle'
-
-  " Active fork of kien/ctrlp.vim—Fuzzy file, buffer, mru, tag, etc finder
   Bundle 'kien/ctrlp.vim'
-
-  " Insert mode auto-completion for quotes, parens, brackets, etc
   Bundle 'Raimondi/delimitMate'
-
-  " :SyntasticCheck :SyntasticToggleMode
   Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_checkers = ['jslint']
     let g:syntastic_jade_checkers = ['jade_lint']
     let g:syntastic_check_on_wq = 0
-
-  " Precision colorscheme for the vim text editor
   Bundle 'altercation/vim-colors-solarized'
     syntax enable
     let g:solarized_termcolors=16
@@ -197,29 +163,15 @@
     catch /^Vim\%((\a\+)\)\=:E117/
       " :(
     endtry
-
-  " css/less/sass/html color preview
   Bundle 'gorodinskiy/vim-coloresque'
     au BufRead *.json set filetype=json " fix missed setf for json
-
-  " A tree explorer plugin
   Bundle 'scrooloose/nerdtree'
     nnoremap <Bs> :<C-u>NERDTreeToggle<CR>
     let NERDTreeQuitOnOpen=1
     let NERDTreeShowHidden=0
     let NERDTreeMinimalUI=1
     map <C-n> :NERDTreeToggle<CR>
-
-  " Perform all your vim insert mode completions with Tab
   Bundle 'ervandew/supertab'
-
-  " Vim plugin for the Perl module / CLI script 'ack'
-  Bundle 'mileszs/ack.vim'
-
-  " Shows 'Nth match out of M' at every search
-  Bundle 'vim-scripts/IndexedSearch'
-
-  " Lean & mean status/tabline for vim that's light as air
   Bundle 'bling/vim-airline'
     let g:airline_theme='solarized'
     let g:airline#extensions#tabline#fnamemod = ':t'  " Display only filename in tab
@@ -229,68 +181,31 @@
     let g:airline_right_sep = ''                      " Set custom right separator
     let g:airline#extensions#tabline#enabled = 0      " Don't display tabs
     let g:airline#extensions#tabline#show_buffers = 0 " Don't display buffers in tab-bar with single tab
-
-  " Provides easy code commenting
   Bundle 'scrooloose/nerdcommenter'
-
-  " Quoting/parenthesizing made simple
   Bundle 'tpope/vim-surround'
-
-  " Vim script for text filtering and alignment
   Bundle 'godlygeek/tabular'
-      nmap <Leader>a= :Tabularize /=<CR>
-      vmap <Leader>a= :Tabularize /=<CR>
-      nmap <Leader>a: :Tabularize /:\zs<CR>
-      vmap <Leader>a: :Tabularize /:\zs<CR>
-
-  " TextMate-like snippets
+    nmap <Leader>a= :Tabularize /=<CR>
+    vmap <Leader>a= :Tabularize /=<CR>
+    nmap <Leader>a: :Tabularize /:\zs<CR>
+    vmap <Leader>a: :Tabularize /:\zs<CR>
   Bundle 'vim-scripts/UltiSnips'
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " :UltiSnipsAddFiletypes css
     au FileType css :UltiSnipsAddFiletypes css
-
-  " My useful Vim snippets
   Bundle 'iamvlado/useful-vim-snippets'
-
-  " Toggle the cursor shape in the terminal for Vim
   Bundle 'jszakmeister/vim-togglecursor'
-
-  " HTML5
-    " HTML5 omnicomplete and syntax
-    Bundle 'othree/html5.vim'
-
-  " CSS
-    " Add CSS3 syntax support to vim's built-in `syntax/css.vim`.
-    Bundle 'hail2u/vim-css3-syntax'
-    " Highlight colors in css files
-    Bundle 'ap/vim-css-color'
-
-  " JavaScript
-    " Vastly improved Javascript indentation and syntax support in Vim
-    Bundle 'pangloss/vim-javascript'
-    " Vim syntax file to add some colorations for jQuery keywords and css selectors
-    Bundle 'itspriddle/vim-jquery'
-    " React JSX syntax highlighting and indenting for vim
-    Bundle 'mxw/vim-jsx'
-      au BufNewFile,BufReadPost *.jsx set filetype=jsx
-
-  " JSON
-    " A better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
-    Bundle 'leshill/vim-json'
-
-  " Markdown
-    " Markdown Vim Mode
-    Bundle 'plasticboy/vim-markdown'
-      let g:vim_markdown_folding_disabled=1 " Disable Folding
-
-  " Jade
-    " Vim Jade template engine syntax highlighting and indention
-    Bundle 'digitaltoad/vim-jade'
-      au BufNewFile,BufReadPost *.jade set filetype=jade
-
-  " Stylus
-    " Syntax Highlighting for Stylus
-    Bundle 'wavded/vim-stylus',
+  Bundle 'othree/html5.vim'
+  Bundle 'hail2u/vim-css3-syntax'
+  Bundle 'ap/vim-css-color'
+  Bundle 'pangloss/vim-javascript'
+  Bundle 'itspriddle/vim-jquery'
+  Bundle 'mxw/vim-jsx'
+    au BufNewFile,BufReadPost *.jsx set filetype=jsx
+  Bundle 'leshill/vim-json'
+  Bundle 'plasticboy/vim-markdown'
+    let g:vim_markdown_folding_disabled=1 " Disable Folding
+  Bundle 'digitaltoad/vim-jade'
+    au BufNewFile,BufReadPost *.jade set filetype=jade
 
   filetype plugin indent on
