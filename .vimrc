@@ -56,7 +56,6 @@
 
   autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 
-
 " Shortcuts
     let mapleader = ","
 
