@@ -1,4 +1,3 @@
-" v5
 " Make Vim more useful
   set nocompatible               " This  must be first, because it changes other options as a side effect
   set nobackup noswapfile nowb   " Don't create backup/swp files
@@ -153,16 +152,7 @@
     syntax enable
     let g:solarized_termcolors=16
     set background=light
-    try
-        colorscheme solarized
-    catch /^Vim\%((\a\+)\)\=:E185/
-      echo "Solarized theme not found. ,Run :BundleInstall"
-    endtry
-    try
-      call togglebg#map("<Leader>b")
-    catch /^Vim\%((\a\+)\)\=:E117/
-      " :(
-    endtry
+    colorscheme solarized
   Bundle 'gorodinskiy/vim-coloresque'
     au BufRead *.json set filetype=json " fix missed setf for json
   Bundle 'scrooloose/nerdtree'
@@ -196,9 +186,12 @@
   Bundle 'iamvlado/useful-vim-snippets'
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
+  Bundle 'mattn/emmet-vim'
   Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
+  Bundle 'othree/javascript-libraries-syntax.vim'
+    let g:used_javascript_libs = 'underscoreackbone,react,flux'
   Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
     au BufNewFile,BufReadPost *.jsx set filetype=jsx
