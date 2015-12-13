@@ -1,27 +1,17 @@
-# ZSH
 alias zshrc="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimrc="vim ~/.vimrc"
 
-# Editors
 alias v='vim'
 
-# Gulp
 alias g="gulp"
 alias b="gulp build"
 alias c="gulp clean"
 alias d="gulp deploy"
 
-# Git
-alias deploy="git subtree push --prefix dist origin gh-pages"
-
-# Translate-shell
 alias ru="trans :ru"
 alias en="trans :en"
 
-# Shell
 alias la="ls -halk"
 alias md='mkdir -p'
 
-# Vim
-alias vimrc="vim ~/.vimrc"
 alias :q='exit'
