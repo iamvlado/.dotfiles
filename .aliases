@@ -8,9 +8,6 @@ alias b="gulp build"
 alias c="gulp clean"
 alias d="gulp deploy"
 
-alias ru="trans :ru"
-alias en="trans :en"
-
 alias la="ls -halk"
 alias md='mkdir -p'
 
