@@ -18,3 +18,8 @@ $ cd translate-shell/
 $ make
 $ [sudo] make install
 ```
+
+## apps 
++ [iTerm2](https://www.spectacleapp.com) — terminal emulator
++ [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
++ [f.lux](https://justgetflux.com/) — software to make your life better
