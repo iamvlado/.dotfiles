@@ -3,7 +3,6 @@ alias zshrc="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 
 # Editors
-alias a='atom'
 alias v='vim'
 
 # Gulp
