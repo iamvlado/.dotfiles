@@ -1,5 +1,5 @@
 
-## Install
+## install
 
 ```zsh
 # dotfiles
