@@ -110,12 +110,6 @@
       nnoremap <Leader><up>    :<C-u>leftabove  new<CR>
       nnoremap <Leader><down>  :<C-u>rightbelow new<CR>
 
-  " Ctrl+a and Ctrl+e in Insert Mode
-      cnoremap <c-e> <end>
-      inoremap     <c-e> <c-o>$
-      cnoremap <c-a> <home>
-      inoremap     <c-a> <c-o>^
-
   " Can be typed even faster than
     :imap jk <Esc>
     :vmap jk <Esc>
