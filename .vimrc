@@ -58,11 +58,6 @@
 " Shortcuts
     let mapleader = ","
 
-" ,f
-     " Fast grep
-     " Recursive search in current directory for matches with current word
-     nnoremap <Leader>f :<C-u>execute "Ack " . expand("<cword>") <Bar> cw<CR>
-
   " Move visual block
      vnoremap J :m '>+1<CR>gv=gv
      vnoremap K :m '<-2<CR>gv=gv
@@ -131,6 +126,7 @@
 
   Bundle 'gmarik/vundle'
   Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_checkers = ['jslint']
@@ -175,6 +171,7 @@
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
   Bundle 'mattn/emmet-vim'
+    imap ee <C-y>,
   Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
