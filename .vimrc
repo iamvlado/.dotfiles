@@ -124,7 +124,7 @@
     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
-    let g:syntastic_javascript_checkers = ['jslint']
+    let g:syntastic_javascript_checkers = ['eslint']
     let g:syntastic_jade_checkers = ['jade_lint']
     let g:syntastic_check_on_wq = 0
   Bundle 'altercation/vim-colors-solarized'
@@ -170,8 +170,6 @@
   Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
-  Bundle 'othree/javascript-libraries-syntax.vim'
-    let g:used_javascript_libs = 'react,flux'
   Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
     au BufNewFile,BufReadPost *.jsx set filetype=jsx
