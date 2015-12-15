@@ -119,6 +119,7 @@
   call vundle#rc()
 
   Bundle 'gmarik/vundle'
+  Bundle 'tpope/vim-fugitive'
   Bundle 'kien/ctrlp.vim'
     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
   Bundle 'Raimondi/delimitMate'
