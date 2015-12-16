@@ -125,6 +125,7 @@
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_checkers = ['eslint']
+    let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.eslintrc"
   Bundle 'altercation/vim-colors-solarized'
     syntax enable
     let g:solarized_termcolors=16
