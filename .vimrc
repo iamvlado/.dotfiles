@@ -125,8 +125,6 @@
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_checkers = ['eslint']
-    let g:syntastic_jade_checkers = ['jade_lint']
-    let g:syntastic_check_on_wq = 0
   Bundle 'altercation/vim-colors-solarized'
     syntax enable
     let g:solarized_termcolors=16
@@ -172,7 +170,7 @@
   Bundle 'pangloss/vim-javascript'
   Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
-    au BufNewFile,BufReadPost *.jsx set filetype=jsx
+    let g:jsx_ext_required = 0
   Bundle 'leshill/vim-json'
   Bundle 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1 " Disable Folding
