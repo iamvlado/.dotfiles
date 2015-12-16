@@ -13,7 +13,6 @@
 " Interface
   set shortmess+=I   " Don't show the intro message starting Vim
   set number         " Display line numbers
-  set cursorline     " Highlight the screen line of the cursor
   set scrolloff=8    " Start scrolling when we're 8 lines away from margins
   set laststatus=2   " Last window always has a status line
   set colorcolumn=80 " Bad and extrabad line sizes
@@ -44,6 +43,9 @@
   noremap <Down> <NOP>
   noremap <Left> <NOP>
   noremap <Right> <NOP>
+
+" A syntax highlighting file for JSON
+  com! FormatJSON %!python -m json.tool
 
 " Automatically clean trailing whitespaces on save
   fun! <SID>StripTrailingWhitespaces()
@@ -125,14 +127,13 @@
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/syntastic'
     let g:syntastic_javascript_checkers = ['eslint']
-    let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.eslintrc"
+    let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.dotfiles/.eslintrc"
   Bundle 'altercation/vim-colors-solarized'
     syntax enable
     let g:solarized_termcolors=16
     set background=light
     colorscheme solarized
   Bundle 'gorodinskiy/vim-coloresque'
-    au BufRead *.json set filetype=json " fix missed setf for json
   Bundle 'scrooloose/nerdtree'
     nnoremap <Bs> :<C-u>NERDTreeToggle<CR>
     let NERDTreeQuitOnOpen=1
@@ -172,7 +173,6 @@
   Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
-  Bundle 'leshill/vim-json'
   Bundle 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1 " Disable Folding
   Bundle 'digitaltoad/vim-jade'

@@ -2,7 +2,8 @@ alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 
 alias v='vim'
-alias subl="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
+alias a='atom'
+alias s="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 alias g="gulp"
 alias b="gulp build"
