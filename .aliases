@@ -3,7 +3,6 @@ alias vimrc="vim ~/.vimrc"
 
 alias v='vim'
 alias a='atom'
-alias s="'/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl'"
 
 alias g="gulp"
 alias b="gulp build"
