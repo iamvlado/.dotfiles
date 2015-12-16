@@ -53,9 +53,9 @@
     "no-multi-spaces": [
       1,
       {
-          "exceptions": {
-              "VariableDeclarator": true
-          }
+        "exceptions": {
+          "VariableDeclarator": true
+        }
       }
     ],
     "no-redeclare": 1,
