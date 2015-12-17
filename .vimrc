@@ -1,33 +1,31 @@
 " Make Vim more useful
   set nocompatible               " This  must be first, because it changes other options as a side effect
-  set nobackup noswapfile nowb   " Don't create backup/swp files
+  set shortmess+=I               " Don't show the intro message starting Vim
+  set nobackup noswapfile        " Don't create backup/swp files
   set visualbell t_vb=           " No beeps, no flashes
   set backspace=indent,eol,start " Use <c-w> and <c-u>
   set clipboard=unnamed          " use os x clipboard
+  set nostartofline              " Don’t reset cursor to start of line when moving around
+  set number                     " Display line numbers
+  set scrolloff=8                " Start scrolling when we're 8 lines away from margins
+  set laststatus=2               " Last window always has a status line
+  set colorcolumn=80             " Bad and extrabad line sizes
+  set noshowmode                 " Don't show current mode down the bottom
+  set wrap                       " Wrap long lines
+  set textwidth=80               " Longer lines will be broken after white space to get this width
 
 " Encoding
   set encoding=utf-8 nobomb " Character encoding used inside Vim
   set fileencodings=utf-8   " Character encodings considered when starting to edit an existing file
   set fileformat=unix       " Always add lf in the end of file
 
-" Interface
-  set shortmess+=I   " Don't show the intro message starting Vim
-  set number         " Display line numbers
-  set scrolloff=8    " Start scrolling when we're 8 lines away from margins
-  set laststatus=2   " Last window always has a status line
-  set colorcolumn=80 " Bad and extrabad line sizes
-  set noshowmode     " Don't show current mode down the bottom
-
 " Ident
   set tabstop=2                      " Number of spaces that a tab counts for
   set shiftwidth=2                   " Number of spaces to use for each step of (auto)indent
-  set softtabstop=2                  " Number of spaces that a tab counts for while performing editing operations
   set expandtab                      " Use spaces instead of tab
   set autoindent                     " Copy indent from current line when starting a new line
   set smartindent                    " Only available when compiled with the +smartindent feature
   set list lcs=tab:▸\ ,eol:¬,trail:· " Show invisibles
-  set wrap                           " Wrap long lines
-  set textwidth=80                   " Longer lines will be broken after white space to get this width
 
 " Search
   set incsearch       " Find the next match as we type the search
@@ -43,6 +41,12 @@
   noremap <Down> <NOP>
   noremap <Left> <NOP>
   noremap <Right> <NOP>
+
+" Return to last edit position when opening files (You want this!)
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 
 " A syntax highlighting file for JSON
   com! FormatJSON %!python -m json.tool
