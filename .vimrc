@@ -5,7 +5,6 @@
   set visualbell t_vb=           " No beeps, no flashes
   set backspace=indent,eol,start " Use <c-w> and <c-u>
   set clipboard=unnamed          " use os x clipboard
-  set nostartofline              " Don’t reset cursor to start of line when moving around
   set number                     " Display line numbers
   set scrolloff=8                " Start scrolling when we're 8 lines away from margins
   set laststatus=2               " Last window always has a status line
