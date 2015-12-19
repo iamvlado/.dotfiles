@@ -29,7 +29,6 @@
     "comma-dangle": 2,
     "comma-spacing": 1,
     "dot-notation": 1,
-    "dot-location": 1,
     "eol-last": 0,
     "eqeqeq": 1,
     "jsx-quotes": 2,
