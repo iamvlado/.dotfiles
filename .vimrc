@@ -169,7 +169,7 @@
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
   Bundle 'mattn/emmet-vim'
-    imap ee <C-y>,
+    imap EE <C-y>,
   Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
