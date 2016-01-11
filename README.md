@@ -7,6 +7,12 @@ git clone --recursive https://github.com/iamvlado/.dotfiles && ~/.dotfiles/init
 # Vim's things
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
+# To use Vim Syntastic with ESLint:
+# Install eslint, babel-eslint (for ES6 support), and eslint-plugin-react:
+npm install -g eslint
+npm install -g babel-eslint
+npm install -g eslint-plugin-react
+
 # Oh My Zsh
 sh -c "$(curl -fsSL
 https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
