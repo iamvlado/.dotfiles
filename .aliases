@@ -4,10 +4,8 @@ alias vimrc="vim ~/.vimrc"
 alias v='vim'
 alias a='atom'
 
-alias g="gulp"
-alias b="gulp build"
-alias c="gulp clean"
-alias d="gulp deploy"
+alias w="npm run watch"
+alias d="npm wun deploy"
 
 alias la="ls -halk"
 alias md='mkdir -p'
