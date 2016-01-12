@@ -5,7 +5,8 @@ alias v='vim'
 alias a='atom'
 
 alias w="npm run watch"
-alias d="npm wun deploy"
+alias b="npm run build"
+alias d="npm run deploy"
 
 alias la="ls -halk"
 alias md='mkdir -p'
