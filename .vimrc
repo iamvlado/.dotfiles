@@ -170,6 +170,8 @@
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " :UltiSnipsAddFiletypes css
     au FileType css :UltiSnipsAddFiletypes css
+    au FileType javascript :UltiSnipsAddFiletypes javascript
+    au FileType html :UltiSnipsAddFiletypes html
   Bundle 'iamvlado/useful-vim-snippets'
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
