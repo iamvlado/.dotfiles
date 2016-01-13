@@ -13,6 +13,7 @@
   set wrap                       " Wrap long lines
   set textwidth=80               " Longer lines will be broken after white space to get this width
 
+
 " Encoding
   set encoding=utf-8 nobomb " Character encoding used inside Vim
   set fileencodings=utf-8   " Character encodings considered when starting to edit an existing file
@@ -103,6 +104,10 @@
   " < >
       vnoremap < <gv
       vnoremap > >gv
+
+  " ,p
+      " Toggle the 'paste' option
+      set pastetoggle=<Leader>p
 
   " ,s
       " Shortcut for :%s//
