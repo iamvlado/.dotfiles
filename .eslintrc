@@ -62,6 +62,7 @@
     "no-trailing-spaces": 0,
     "no-undef": 2,
     "no-undef-init": 1,
+    "indent": [2, 2],
     "no-undefined": 1,
     "no-underscore-dangle": 0,
     "no-unneeded-ternary": 2,
