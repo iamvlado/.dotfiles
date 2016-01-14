@@ -180,9 +180,6 @@
   Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
-  Bundle 'othree/javascript-libraries-syntax.vim'
-    let g:used_javascript_libs = 'react,flux'
-  Bundle 'itspriddle/vim-jquery'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
   Bundle 'plasticboy/vim-markdown'
