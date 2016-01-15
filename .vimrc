@@ -25,7 +25,7 @@
   set expandtab                      " Use spaces instead of tab
   set autoindent                     " Copy indent from current line when starting a new line
   set smartindent                    " Only available when compiled with the +smartindent feature
-  set list lcs=tab:▸\ ,eol:¬,trail:· " Show invisibles
+  set list lcs=tab:▸\ ,trail:·       " Show invisibles
 
 " Search
   set incsearch       " Find the next match as we type the search
