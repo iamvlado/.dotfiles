@@ -184,7 +184,7 @@
     let g:jsx_ext_required = 0
   Bundle 'plasticboy/vim-markdown'
     let g:vim_markdown_folding_disabled=1 " Disable Folding
-  Bundle 'digitaltoad/vim-jade'
-    au BufNewFile,BufReadPost *.jade set filetype=jade
+  Bundle 'digitaltoad/vim-pug'
+    au BufNewFile,BufReadPost *.jade set filetype=pug
 
   filetype plugin indent on
