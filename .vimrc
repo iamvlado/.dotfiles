@@ -155,8 +155,6 @@
     let g:airline_section_y = ''                      " Don't display encoding
     let g:airline_left_sep = ''                       " Set custom left separator
     let g:airline_right_sep = ''                      " Set custom right separator
-    let g:airline#extensions#tabline#enabled = 0      " Don't display tabs
-    let g:airline#extensions#tabline#show_buffers = 0 " Don't display buffers in tab-bar with single tab
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
   Bundle 'godlygeek/tabular'
