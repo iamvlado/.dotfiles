@@ -132,9 +132,9 @@
   Bundle 'kien/ctrlp.vim'
     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
   Bundle 'Raimondi/delimitMate'
-  Bundle 'scrooloose/syntastic'
-    let g:syntastic_javascript_checkers = ['eslint']
-    let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.dotfiles/.eslintrc"
+  "Bundle 'scrooloose/syntastic'
+    "let g:syntastic_javascript_checkers = ['eslint']
+    "let g:syntastic_javascript_eslint_args = "--no-eslintrc --config ~/.dotfiles/.eslintrc"
   Bundle 'altercation/vim-colors-solarized'
     syntax enable
     let g:solarized_termcolors=16
@@ -143,6 +143,7 @@
   Bundle 'gorodinskiy/vim-coloresque'
   Bundle 'scrooloose/nerdtree'
     nnoremap <Bs> :<C-u>NERDTreeToggle<CR>
+    let NERDTreeShowLineNumbers=1
     let NERDTreeQuitOnOpen=1
     let NERDTreeShowHidden=0
     let NERDTreeMinimalUI=1
@@ -166,7 +167,6 @@
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
     let g:UltiSnipsJumpBackwardTrigger="<s-tab>" " :UltiSnipsAddFiletypes css
-    au FileType scss :UltiSnipsAddFiletypes css
     au FileType css :UltiSnipsAddFiletypes css
     au FileType javascript :UltiSnipsAddFiletypes javascript
     au FileType html :UltiSnipsAddFiletypes html
