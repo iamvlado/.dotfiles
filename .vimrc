@@ -123,6 +123,19 @@
   " Can be typed even faster than
     :imap jk <Esc>
     :vmap jk <Esc>
+    "
+  " ,m — Toggle mouse support in Normal mode
+    set mouse=
+    function! ToggleMouse()
+      if &mouse == 'a'
+        set mouse=
+        echo "Mouse usage disabled"
+      else
+        set mouse=a
+        echo "Mouse usage enabled"
+      endif
+    endfunction
+    nnoremap <leader>m :call ToggleMouse()<CR>
 
 " Plugins
   set rtp+=~/.vim/bundle/vundle/
