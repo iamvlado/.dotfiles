@@ -163,12 +163,13 @@
     map <C-n> :NERDTreeToggle<CR>
   Bundle 'ervandew/supertab'
   Bundle 'bling/vim-airline'
-    let g:airline_theme='solarized'
     let g:airline#extensions#tabline#fnamemod = ':t'  " Display only filename in tab
     let g:airline_section_x = ''                      " Don't display filetype
     let g:airline_section_y = ''                      " Don't display encoding
     let g:airline_left_sep = ''                       " Set custom left separator
     let g:airline_right_sep = ''                      " Set custom right separator
+  Bundle 'vim-airline/vim-airline-themes'
+    let g:airline_theme='solarized'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
   Bundle 'godlygeek/tabular'
@@ -188,7 +189,6 @@
   Bundle 'othree/html5.vim'
   Bundle 'mattn/emmet-vim'
     imap EE <C-y>,
-  Bundle 'hail2u/vim-css3-syntax'
   Bundle 'ap/vim-css-color'
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
