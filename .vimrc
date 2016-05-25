@@ -153,7 +153,6 @@
     let g:solarized_termcolors=16
     set background=light
     colorscheme solarized
-  Bundle 'gorodinskiy/vim-coloresque'
   Bundle 'scrooloose/nerdtree'
     nnoremap <Bs> :<C-u>NERDTreeToggle<CR>
     let NERDTreeShowLineNumbers=1
@@ -190,6 +189,7 @@
   Bundle 'mattn/emmet-vim'
     imap EE <C-y>,
   Bundle 'ap/vim-css-color'
+  Bundle 'hail2u/vim-css3-syntax'
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
