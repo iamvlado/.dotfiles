@@ -188,8 +188,6 @@
   Bundle 'othree/html5.vim'
   Bundle 'mattn/emmet-vim'
     imap EE <C-y>,
-  Bundle 'ap/vim-css-color'
-  Bundle 'hail2u/vim-css3-syntax'
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
@@ -197,5 +195,7 @@
     let g:vim_markdown_folding_disabled=1 " Disable Folding
   Bundle 'digitaltoad/vim-pug'
     au BufNewFile,BufReadPost *.jade set filetype=pug
+
+    autocmd BufNewFile,BufRead *.css   set syntax=off
 
   filetype plugin indent on
