@@ -12,7 +12,7 @@
   set noshowmode                 " Don't show current mode down the bottom
   set wrap                       " Wrap long lines
   set textwidth=80               " Longer lines will be broken after white space to get this width
-
+  set nostartofline              " Don’t reset cursor to start of line when moving around.
 
 " Encoding
   set encoding=utf-8 nobomb " Character encoding used inside Vim
@@ -25,7 +25,7 @@
   set expandtab                      " Use spaces instead of tab
   set autoindent                     " Copy indent from current line when starting a new line
   set smartindent                    " Only available when compiled with the +smartindent feature
-  set list lcs=tab:▸\ ,trail:·       " Show invisibles
+  set list lcs=trail:.               " Use the same symbols as TextMate for tabstops and EOLs
 
 " Search
   set incsearch       " Find the next match as we type the search
@@ -121,9 +121,9 @@
       nnoremap <Leader><down>  :<C-u>rightbelow new<CR>
 
   " Can be typed even faster than
-    :imap jk <Esc>
-    :vmap jk <Esc>
-    "
+    :imap jj <Esc>
+    :vmap jj <Esc>
+
   " ,m — Toggle mouse support in Normal mode
     set mouse=
     function! ToggleMouse()
@@ -171,11 +171,6 @@
     let g:airline_theme='solarized'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
-  Bundle 'godlygeek/tabular'
-    nmap <Leader>a= :Tabularize /=<CR>
-    vmap <Leader>a= :Tabularize /=<CR>
-    nmap <Leader>a: :Tabularize /:\zs<CR>
-    vmap <Leader>a: :Tabularize /:\zs<CR>
   Bundle 'vim-scripts/UltiSnips'
     let g:UltiSnipsExpandTrigger="<tab>"
     let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -186,16 +181,13 @@
   Bundle 'iamvlado/useful-vim-snippets'
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
-  Bundle 'mattn/emmet-vim'
-    imap EE <C-y>,
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
-  Bundle 'plasticboy/vim-markdown'
-    let g:vim_markdown_folding_disabled=1 " Disable Folding
   Bundle 'digitaltoad/vim-pug'
     au BufNewFile,BufReadPost *.jade set filetype=pug
 
     autocmd BufNewFile,BufRead *.css   set syntax=off
+    autocmd BufNewFile,BufRead *.md    set syntax=off
 
   filetype plugin indent on
