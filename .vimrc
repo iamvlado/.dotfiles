@@ -1,18 +1,17 @@
 " Make Vim more useful
-  set nocompatible               " This  must be first, because it changes other options as a side effect
-  set shortmess+=I               " Don't show the intro message starting Vim
-  set nobackup noswapfile        " Don't create backup/swp files
-  set visualbell t_vb=           " No beeps, no flashes
-  set backspace=indent,eol,start " Use <c-w> and <c-u>
-  set clipboard=unnamed          " use os x clipboard
-  set relativenumber             " Display line numbers
-  set scrolloff=8                " Start scrolling when we're 8 lines away from margins
-  set laststatus=2               " Last window always has a status line
-  set colorcolumn=80             " Bad and extrabad line sizes
-  set noshowmode                 " Don't show current mode down the bottom
-  set wrap                       " Wrap long lines
-  set textwidth=80               " Longer lines will be broken after white space to get this width
-  set nostartofline              " Don’t reset cursor to start of line when moving around.
+  set nocompatible        " This must be first, because it changes other options as a side effect
+  set shortmess+=I        " Don't show the intro message starting Vim
+  set nobackup noswapfile " Don't create backup/swp files
+  set visualbell t_vb=    " No beeps, no flashes
+  set clipboard=unnamed   " use os x clipboard
+  set relativenumber      " Display line numbers
+  set scrolloff=8         " Start scrolling when we're 8 lines away from margins
+  set laststatus=2        " Last window always has a status line
+  set colorcolumn=80      " Bad and extrabad line sizes
+  set noshowmode          " Don't show current mode down the bottom
+  set wrap                " Wrap long lines
+  set textwidth=80        " Longer lines will be broken after white space to get this width
+  set nostartofline       " Don’t reset cursor to start of line when moving around.
 
 " Encoding
   set encoding=utf-8 nobomb " Character encoding used inside Vim
@@ -20,17 +19,17 @@
   set fileformat=unix       " Always add lf in the end of file
 
 " Ident
-  set tabstop=2                      " Number of spaces that a tab counts for
-  set shiftwidth=2                   " Number of spaces to use for each step of (auto)indent
-  set expandtab                      " Use spaces instead of tab
-  set autoindent                     " Copy indent from current line when starting a new line
-  set smartindent                    " Only available when compiled with the +smartindent feature
-  set list lcs=trail:.               " Use the same symbols as TextMate for tabstops and EOLs
+  set tabstop=2        " Number of spaces that a tab counts for
+  set shiftwidth=2     " Number of spaces to use for each step of (auto)indent
+  set expandtab        " Use spaces instead of tab
+  set autoindent       " Copy indent from current line when starting a new line
+  set smartindent      " Only available when compiled with the +smartindent feature
+  set list lcs=trail:. " Use the same symbols as TextMate for tabstops and EOLs
 
 " Search
-  set incsearch       " Find the next match as we type the search
-  set hlsearch        " Highlight searches by default
-  set ignorecase      " Ignore case when searching...
+  set incsearch  " Find the next match as we type the search
+  set hlsearch   " Highlight searches by default
+  set ignorecase " Ignore case when searching...
 
 " Disable <Arrow keys>
   inoremap <Up> <NOP>
@@ -162,11 +161,11 @@
     map <C-n> :NERDTreeToggle<CR>
   Bundle 'ervandew/supertab'
   Bundle 'bling/vim-airline'
-    let g:airline#extensions#tabline#fnamemod = ':t'  " Display only filename in tab
-    let g:airline_section_x = ''                      " Don't display filetype
-    let g:airline_section_y = ''                      " Don't display encoding
-    let g:airline_left_sep = ''                       " Set custom left separator
-    let g:airline_right_sep = ''                      " Set custom right separator
+    let g:airline#extensions#tabline#fnamemod = ':t' " Display only filename in tab
+    let g:airline_section_x = ''                     " Don't display filetype
+    let g:airline_section_y = ''                     " Don't display encoding
+    let g:airline_left_sep = ''                      " Set custom left separator
+    let g:airline_right_sep = ''                     " Set custom right separator
   Bundle 'vim-airline/vim-airline-themes'
     let g:airline_theme='solarized'
   Bundle 'scrooloose/nerdcommenter'
