@@ -3,6 +3,7 @@
   set shortmess+=I        " Don't show the intro message starting Vim
   set nobackup noswapfile " Don't create backup/swp files
   set visualbell t_vb=    " No beeps, no flashes
+  set backspace=indent,eol,start " Use <c-w> and <c-u>
   set clipboard=unnamed   " use os x clipboard
   set relativenumber      " Display line numbers
   set scrolloff=8         " Start scrolling when we're 8 lines away from margins
