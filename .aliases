@@ -4,7 +4,7 @@ alias vimrc="vim ~/.vimrc"
 alias v='vim'
 alias a='atom'
 
-alias w="npm run watch"
+alias s="npm run start"
 alias b="npm run build"
 alias d="npm run deploy"
 
