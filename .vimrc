@@ -161,6 +161,11 @@
     let NERDTreeMinimalUI=1
     map <C-n> :NERDTreeToggle<CR>
   Bundle 'ervandew/supertab'
+  Bundle 'Yggdroot/indentLine'
+    hi IndentGuidesOdd  ctermbg=white
+    hi IndentGuidesEven ctermbg=lightgrey
+    let g:indentLine_char = '│'
+    let g:indentLine_color_term = 194
   Bundle 'bling/vim-airline'
     let g:airline#extensions#tabline#fnamemod = ':t' " Display only filename in tab
     let g:airline_section_x = ''                     " Don't display filetype
