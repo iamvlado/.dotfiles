@@ -2,7 +2,6 @@ alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 
 alias v='vim'
-alias a='atom'
 
 alias s="npm run start"
 alias b="npm run build"
