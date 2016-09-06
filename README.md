@@ -28,4 +28,3 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 + [iTerm2](https://www.spectacleapp.com) — terminal emulator
 + [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
 + [f.lux](https://justgetflux.com/) — software to make your life better
-+ [SelfControl](https://selfcontrolapp.com) — a free Mac application to help you avoid distracting websites
