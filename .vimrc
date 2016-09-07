@@ -187,6 +187,7 @@
   Bundle 'jszakmeister/vim-togglecursor'
   Bundle 'othree/html5.vim'
   Bundle 'pangloss/vim-javascript'
+  Bundle 'gavocanov/vim-js-indent'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
   Bundle 'digitaltoad/vim-pug'
