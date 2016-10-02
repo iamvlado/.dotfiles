@@ -28,3 +28,8 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 + [iTerm2](https://www.spectacleapp.com) — terminal emulator
 + [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
 + [f.lux](https://justgetflux.com/) — software to make your life better
+
+## chrome plugins
++ [Pesticide](http://pesticide.io/) — for quickly debugging css layout issues by toggling different colored outlines on every element
++ [WhatFont](http://www.chengyinliu.com/whatfont.html) — the easiest way to identify fonts on web pages
++ [Wappalyzer](https://wappalyzer.com/) — identifies software on the web
