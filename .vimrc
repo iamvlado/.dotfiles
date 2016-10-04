@@ -144,6 +144,7 @@
   Bundle 'gmarik/vundle'
   Bundle 'kien/ctrlp.vim'
     let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+    let g:ctrlp_match_window = 'bottom,order:ttb'             " order matching files top to bottom
   Bundle 'Raimondi/delimitMate'
   "Bundle 'scrooloose/syntastic'
     "let g:syntastic_javascript_checkers = ['eslint']
