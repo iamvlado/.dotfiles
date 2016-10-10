@@ -22,7 +22,7 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ## ui
 + [iTerm Color Schemes](https://github.com/mbadolato/iTerm2-Color-Schemes) — over 130 color schemes/themes for iTerm/iTerm2
-+ [https://github.com/tonsky/FiraCode](https://github.com/tonsky/FiraCode) — Fira Code: monospaced font with programming ligatures
++ [FiraCode](https://github.com/tonsky/FiraCode) — Fira Code: monospaced font with programming ligatures
 + [Hack](https://github.com/chrissimpkins/Hack) — a typeface designed for source code
 
 ## free apps
