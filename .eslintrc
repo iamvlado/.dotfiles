@@ -1,107 +1,101 @@
 {
-  "parser": "babel-eslint",
-  "ecmaFeatures": {
-    "classes": true,
-    "modules": true,
-    "jsx": true
+  parser: "babel-eslint",
+
+  plugins: [
+    "react",
+  ],
+
+  extends: [
+    "./index.js",
+  ],
+
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
-  "plugins": [ "react" ],
-  "env": {
-    "node": true,
-    "es6": true
-  },
-  "globals": {
-    "document": false,
-    "window": false,
-    "React": false,
-    "_": false,
-    "classnames": false,
-    "ReactClass": false,
-    "ReactDOM": false,
-    "DEBUG": false
-  },
-  "rules": {
-    "arrow-spacing": 1,
-    "block-spacing": 1,
-    "brace-style": 1,
-    "camelcase": 0,
-    "curly": 1,
-    "comma-dangle": 2,
-    "comma-spacing": 1,
-    "dot-notation": 1,
-    "eol-last": 0,
-    "eqeqeq": 1,
-    "jsx-quotes": 2,
-    "key-spacing": 0,
-    "max-len": [ 1, 120, 4, { "ignoreComments": true, "ignoreUrls": true } ],
-    "newline-after-var": 1,
-    "no-cond-assign": 1,
-    "no-constant-condition": 1,
-    "no-const-assign": 1,
-    "no-debugger": 1,
-    "no-dupe-args": 1,
-    "no-dupe-keys": 1,
-    "no-duplicate-case": 1,
-    "no-empty": 1,
-    "no-extra-bind": 1,
-    "no-extra-semi": 1,
-    "no-loop-func": 0,
-    "no-mixed-requires": 1,
-    "no-mixed-spaces-and-tabs": 1,
-    "no-multiple-empty-lines": [ 1, { "max": 1 } ],
-    "no-multi-spaces": [
-      1,
-      {
-        "exceptions": {
-          "VariableDeclarator": true
-        }
-      }
-    ],
-    "no-redeclare": 1,
-    "no-sequences": 1,
-    "no-trailing-spaces": 0,
-    "no-undef": 2,
-    "no-undef-init": 1,
-    "indent": [2, 2],
-    "no-undefined": 1,
-    "no-underscore-dangle": 0,
-    "no-unneeded-ternary": 2,
-    "no-unused-vars": [ 1, { "varsIgnorePattern": "^React$" } ],
-    "no-unreachable": 1,
-    "no-useless-call": 1,
-    "no-use-before-define": 1,
-    "no-var": 1,
-    "no-with": 2,
-    "object-shorthand": 1,
-    "operator-assignment": 2,
-    "operator-linebreak": [ 1, "after", { "overrides": { "?": "after" } } ],
-    "prefer-arrow-callback": 1,
-    "prefer-const": 1,
-    "prefer-spread": 1,
-    "quotes": 0,
-    "react/display-name": 0,
-    "react/no-direct-mutation-state": 1,
-    "react/jsx-boolean-value": 2,
-    "react/jsx-closing-bracket-location": [ 1, "after-props" ],
-    "react/jsx-indent-props": [ 1, 8 ],
+
+  rules: {
+    "jsx-quotes": [ 2, "prefer-double" ],
+
+    "react/jsx-boolean-value": [ 2, "never" ],
+    "react/jsx-closing-bracket-location": [ 2, "tag-aligned" ],
+    "react/jsx-curly-spacing": [ 2, "always", {
+      "allowMultiline": true,
+      "spacing": {
+        "objectLiterals": "never",
+      },
+    } ],
+    "react/jsx-equals-spacing": [ 2, "never" ],
+    "react/jsx-filename-extension": 0, // .jsx sucks :)
+    "react/jsx-first-prop-new-line": [ 2, "multiline" ],
+    "react/jsx-handler-names": 2,
+    "react/jsx-indent-props": [ 2, 2 ],
+    "react/jsx-indent": [ 2, 2 ],
+    "react/jsx-key": 2,
+    "react/jsx-max-props-per-line": 0, // eslint max-len is enough
+    "react/jsx-no-bind": 2,
+    "react/jsx-no-duplicate-props": 2,
+    "react/jsx-no-literals": 2,
+    "react/jsx-no-target-blank": 2,
     "react/jsx-no-undef": 2,
-    "react/jsx-sort-prop-types": 0,
-    "react/jsx-sort-props": 0,
+    "react/jsx-pascal-case": 2,
+    "react/jsx-sort-props": 0, // alpha order is stupid
+    "react/jsx-sort-prop-types": 0, // deprecated
+    "react/jsx-space-before-closing": 2,
     "react/jsx-uses-react": 2,
     "react/jsx-uses-vars": 2,
+    "react/jsx-wrap-multilines": 2,
+    "react/jsx-no-comment-textnodes": 2,
+
+    "react/forbid-component-props": 0, // I know what I am doing ok?
+    "react/display-name": 0, // transpilers does a good job for now
+    "react/forbid-prop-types": 0,
+    "react/no-children-prop": 2,
+    "react/no-danger-with-children": 2,
+    "react/no-danger": 0, // dangerous properties names are clear enough
+    "react/no-deprecated": 2,
     "react/no-did-mount-set-state": 2,
     "react/no-did-update-set-state": 2,
-    "react/no-multi-comp": 0,
+    "react/no-direct-mutation-state": 2,
+    "react/no-find-dom-node": 2,
+    "react/no-is-mounted": 2,
+    "react/no-multi-comp": 2,
+    "react/no-render-return-value": 2,
+    "react/no-set-state": 0, // sometimes it's relevant
+    "react/no-string-refs": 2,
+    "react/no-unescaped-entities": 2,
     "react/no-unknown-property": 2,
-    "react/prop-types": 0,
+    // https://github.com/yannickcr/eslint-plugin-react/issues/861
+    "react/no-unused-prop-types": 0,
+    "react/prefer-es6-class": 2,
+    "react/prefer-stateless-function": 2,
+    "react/prop-types": 2,
     "react/react-in-jsx-scope": 2,
-    "react/self-closing-comp": 1,
-    "react/sort-comp": 0,
-    "react/wrap-multilines": 2,
-    "semi": 2,
-    "keyword-spacing": 1,
-    "space-before-blocks": 1,
-    "space-infix-ops": 1,
-    "strict": 2
-  }
+    "react/require-optimization": 0, // a bit brutal
+    "react/require-render-return": 2,
+    "react/self-closing-comp": 2,
+    "react/sort-comp": [ 2, {
+      "order": [
+        // allow to add props/state on top of react classes
+        "props",
+        "state",
+
+        // defaults
+        // eslint-disable-next-line max-len
+        // https://github.com/yannickcr/eslint-plugin-react/blob/master/lib/rules/sort-comp.js
+        "static-methods",
+        "lifecycle",
+        "everything-else",
+        "render",
+      ],
+    } ],
+    "react/sort-prop-types": 0, // alpha order is stupid
+    "react/style-prop-object": 2,
+
+    // deprecated with v6
+    "react/require-extension": 0,
+    "react/wrap-multilines" : 0,
+    "react/no-comment-textnodes": 0,
+  },
 }

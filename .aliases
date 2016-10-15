@@ -1,6 +1,8 @@
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 
+alias _="sudo "
+
 alias v='vim'
 
 alias s="npm run start"
@@ -11,5 +13,7 @@ alias la="ls -halk"
 alias md='mkdir -p'
 
 alias gl='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
+
+alias gs="curl https://status.github.com/api/status.json"
 
 alias :q='exit'

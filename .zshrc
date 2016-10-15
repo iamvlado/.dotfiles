@@ -6,10 +6,7 @@ LC_ALL=en_US.UTF-8
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="robbyrussell"
 COMPLETION_WAITING_DOTS="true"
-plugins=(last-working-dir sudo npm)
-
-# Allow <c-s> in Vim
-vim() STTY=-ixon command vim "$@"
+plugins=(npm last-working-dir)
 
 # Add sourses
 export DOTFILES=$HOME/.dotfiles
