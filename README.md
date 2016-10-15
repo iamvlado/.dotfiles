@@ -11,8 +11,10 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 sh -c "$(curl -fsSL
 https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
-## other
-+ [Gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
+
+## cli
++ [trash](https://github.com/sindresorhus/trash-cli) — move files and folders to the trash
++ [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) — a code-searching tool similar to ack, but faster
 
 ## fonts
 + [FiraCode](https://github.com/tonsky/FiraCode) — Fira Code: monospaced font with programming ligatures
@@ -26,3 +28,7 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 + [Pesticide](http://pesticide.io/) — for quickly debugging css layout issues by toggling different colored outlines on every element
 + [WhatFont](http://www.chengyinliu.com/whatfont.html) — the easiest way to identify fonts on web pages
 + [Wappalyzer](https://wappalyzer.com/) — identifies software on the web
+
+## other
++ [Solarized](http://ethanschoonover.com/solarized) — precision colors for machines and people
++ [Gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
