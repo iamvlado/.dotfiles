@@ -137,7 +137,6 @@
   call vundle#rc()
 
   Bundle 'gmarik/vundle'
-  " Use Ag with ack.vim for search
   Bundle 'altercation/vim-colors-solarized'
     let g:solarized_termcolors=16
     set background=light
@@ -152,6 +151,7 @@
     let g:airline_right_sep = ''    " Set custom right separator
   Bundle 'airblade/vim-gitgutter'
     let g:gitgutter_signs = 0
+  " Use Ag with ack.vim for search
   Bundle 'mileszs/ack.vim'
     let g:ackprg = 'ag --vimgrep'
   Bundle 'kien/ctrlp.vim'
@@ -163,26 +163,16 @@
   Bundle 'tpope/vim-vinegar'
   " set number for tree
     let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-    let g:netrw_liststyle = 3 " Default to tree listing"
     let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
   Bundle 'tpope/vim-fugitive'
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
   Bundle 'Raimondi/delimitMate'
-  "Bundle 'Yggdroot/indentLine'
-    "hi IndentGuidesOdd  ctermbg=grey
-    "hi IndentGuidesEven ctermbg=grey
-    "let g:indentLine_char = '│'
-    "let g:indentLine_color_term = 194
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
   Bundle 'vim-scripts/UltiSnips'
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-    au FileType css :UltiSnipsAddFiletypes css
-    au FileType javascript :UltiSnipsAddFiletypes javascript
   Bundle 'iamvlado/useful-vim-snippets'
 
-  syntax enable
+  syntax on
   filetype plugin indent on
