@@ -1,3 +1,5 @@
+# .dotfiles
+
 ## install
 
 ```zsh
@@ -15,6 +17,9 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ## cli
 + [trash](https://github.com/sindresorhus/trash-cli) — move files and folders to the trash
 + [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) — a code-searching tool similar to ack, but faster
+
+## npm
++ [npm-check](https://www.npmjs.com/package/npm-check) — check for outdated, incorrect, and unused dependencies
 
 ## fonts
 + [FiraCode](https://github.com/tonsky/FiraCode) — Fira Code: monospaced font with programming ligatures
