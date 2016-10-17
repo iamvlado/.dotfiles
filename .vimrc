@@ -76,10 +76,6 @@
 " Shortcuts
     let mapleader = ","
 
-  " Jump to matching pairs easily, with Tab
-    nnoremap <Tab> %
-    vnoremap <Tab> %
-
   " Ctrl+s
       noremap <C-s> <esc>:w<CR>
       inoremap <C-s> <esc>:w<CR>
