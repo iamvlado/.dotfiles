@@ -169,6 +169,8 @@
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
   Bundle 'vim-scripts/UltiSnips'
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
   Bundle 'iamvlado/useful-vim-snippets'
 
   syntax on
