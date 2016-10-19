@@ -14,6 +14,7 @@
   set colorcolumn=80      " Bad and extrabad line sizes
   set autochdir           " Auto change working dir (could have problems with some plugins)
   set autoread            " Reload files changed outside Vim
+  set lazyredraw          " Redraw only when we need to
   set mouse=a             " Mouse support in Normal mode
   set backspace=indent,eol,start " Allow backspace in insert mode
 
