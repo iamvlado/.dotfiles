@@ -147,7 +147,6 @@
     let g:airline_left_sep = ''     " Set custom left separator
     let g:airline_right_sep = ''    " Set custom right separator
   Bundle 'airblade/vim-gitgutter'
-    let g:gitgutter_signs = 0
   " Use Ag with ack.vim for search
   Bundle 'mileszs/ack.vim'
     let g:ackprg = 'ag --vimgrep'
@@ -161,10 +160,12 @@
   " set number for tree
     let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
     let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+  Bundle 'ervandew/supertab'
   Bundle 'tpope/vim-fugitive'
   Bundle 'pangloss/vim-javascript'
   Bundle 'mxw/vim-jsx'
     let g:jsx_ext_required = 0
+  Bundle 'othree/html5.vim'
   Bundle 'Raimondi/delimitMate'
   Bundle 'scrooloose/nerdcommenter'
   Bundle 'tpope/vim-surround'
