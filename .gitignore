@@ -5,8 +5,6 @@ gh-cache
 ^\.*
 !.gitignore
 !.bowerrc
-
-
 .DS_Store
 .DS_Store?
 ._*

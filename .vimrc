@@ -23,12 +23,12 @@
   set fileencodings=utf-8 " Use UTF-8 without BOM
 
 " Ident
-  set tabstop=2        " Number of spaces that a tab counts for
-  set shiftwidth=2     " Number of spaces to use for each step of (auto)indent
+  set tabstop=2    " Number of spaces that a tab counts for
+  set shiftwidth=2 " Number of spaces to use for each step of (auto)indent
   set smarttab
-  set expandtab        " Use spaces instead of tab
-  set autoindent       " Copy indent from current line when starting a new line
-  set smartindent      " Only available when compiled with the +smartindent feature
+  set expandtab    " Use spaces instead of tab
+  set autoindent   " Copy indent from current line when starting a new line
+  set smartindent  " Only available when compiled with the +smartindent feature
 
 " Search
   set incsearch  " Find the next match as we type the search
