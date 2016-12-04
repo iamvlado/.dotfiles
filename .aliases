@@ -5,6 +5,7 @@ alias v='vim'
 alias s="npm run start"
 alias b="npm run build"
 alias d="npm run deploy"
+alias l="npm run lint"
 alias la="ls -halk"
 alias md='mkdir -p'
 alias gl='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
