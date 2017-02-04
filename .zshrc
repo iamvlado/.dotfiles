@@ -16,9 +16,3 @@ source $DOTFILES/.aliases
 
 # Allow <c-s> in Vim
 vim() STTY=-ixon command vim "$@"
-
-rd () {
-  mkdir "$1"
-  cd "$1"
-  touch index.js
-}
