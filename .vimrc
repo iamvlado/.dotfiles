@@ -119,6 +119,10 @@
       nnoremap <leader>s :<C-u>%s//<left>
       vnoremap <leader>s :s//<left>
 
+  " ,ss
+      " Shortcut for :cdo %s//
+      nnoremap <leader>ss :<C-u>cdo %s//<left>
+
   " Create a new window relative to the current one
       nnoremap <Leader><left>  :<C-u>leftabove  vnew<CR>
       nnoremap <Leader><right> :<C-u>rightbelow vnew<CR>
