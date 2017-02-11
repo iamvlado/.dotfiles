@@ -34,4 +34,5 @@ https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 ## other
 + [Solarized](http://ethanschoonover.com/solarized) — precision colors for machines and people
++ [Fabulous macOS Tips & Tricks](https://blog.sindresorhus.com/macos-tips-tricks-13046cf377f8#.akgfqk1uo) — some useful productivity hacks
 + [Gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
