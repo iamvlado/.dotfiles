@@ -1,10 +1,14 @@
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias _="sudo "
-alias v='vim'
-alias s="npm run start"
+alias v="vim"
+alias la="ls -halk"
+alias md="mkdir -p"
+
+## npm
+
+alias s="npm start"
 alias b="npm run build"
 alias d="npm run deploy"
 alias l="npm run lint"
-alias la="ls -halk"
-alias md="mkdir -p"
+alias npmL="npm list -g --depth=0"
