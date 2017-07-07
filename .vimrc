@@ -1,182 +1,173 @@
-" Make Vim more useful
-  set nocompatible        " This must be first, because it changes other options as a side effect
-  set shortmess+=I        " Don't show the intro message starting Vim
-  set nobackup noswapfile " Don't create backup/swp files
-  set visualbell t_vb=    " No beeps, no flashes
-  set clipboard=unnamed   " Use os x clipboard
-  set nostartofline       " Don’t reset cursor to start of line when moving around
-  set noshowmode          " Don't show current mode down the bottom
-  set noshowcmd           " Don't show incomplete cmds down the bottom
-  set relativenumber      " Display line numbers
-  set scrolloff=8         " Start scrolling when we're 8 lines away from margins
-  set wrap                " Wrap long lines
-  set textwidth=80        " Longer lines will be broken after white space to get this width
-  set colorcolumn=80      " Bad and extrabad line sizes
-  set autochdir           " Auto change working dir (could have problems with some plugins)
-  set autoread            " Reload files changed outside Vim
-  set lazyredraw          " Redraw only when we need to
-  set mouse=a             " Mouse support in Normal mode
-  set backspace=indent,eol,start " Allow backspace in insert mode
+set nocompatible " this must be first
+set ttyfast      " indicates a fast terminal connection
 
-" Encoding
-  set encoding=utf-8 nobomb
-  set fileencodings=utf-8 " Use UTF-8 without BOM
+" syntax
+filetype off
+filetype plugin indent on " enabling indentation and plugins for specific files
+syntax on
 
-" Ident
-  set tabstop=2    " Number of spaces that a tab counts for
-  set shiftwidth=2 " Number of spaces to use for each step of (auto)indent
-  set smarttab
-  set expandtab    " Use spaces instead of tab
-  set autoindent   " Copy indent from current line when starting a new line
-  set smartindent  " Only available when compiled with the +smartindent feature
+set nolazyredraw      " fix vim render
+set clipboard=unnamed " use macOS clipboard
+set history=1000      " increase history
+set timeoutlen=250    " solves: there is a pause when leaving insert mode
 
-" Search
-  set incsearch  " Find the next match as we type the search
-  set hlsearch   " Highlight searches by default
-  set ignorecase " Ignore case when searching...
+" no backups
+set nobackup
+set noswapfile
+set nowb
 
-  " Ag — a code-searching tool similar to ack, but faster
-  " https://github.com/ggreer/the_silver_searcher
-    if executable('ag')
-      set grepprg=ag\ --nogroup\ --nocolor
-      command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-    endif
+" no sounds, no flashes
+set novisualbell
+set t_vb=
+set tm=500
+set noerrorbells
 
-" Disable <Arrow keys>
-  inoremap <Up> <NOP>
-  inoremap <Down> <NOP>
-  inoremap <Left> <NOP>
-  inoremap <Right> <NOP>
-  noremap <Up> <NOP>
-  noremap <Down> <NOP>
-  noremap <Left> <NOP>
-  noremap <Right> <NOP>
+" specify undodir (https://jovicailic.org/2017/04/vim-persistent-undo/)
+set undodir=~/.vim_runtime/undodir
+set undofile
+set undoreload=10000
 
-" Arrow key to navigate windows
-  noremap <Down> <C-W>j
-  noremap <Up> <C-W>k
-  noremap <Left> <C-W>h
-  noremap <Right> <C-W>l
+" ui/ux tweaks
+set shortmess=I    " don't show the intro message starting vim
+set relativenumber " display relative numbers
+set colorcolumn=81 " show bad and extrabad line sizes
+set scrolloff=8    " start scrolling when we're 8 lines away from margins
+set lbr            " will wrap long lines between words
+set mouse=a        " mouse support in normal mode
 
-" Return to last edit position when opening files (You want this!)
-  autocmd BufReadPost *
-    \ if line("'\"") > 0 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+" no tabs or spaces
+set tabstop=2
+set shiftwidth=2
+set smarttab
+set et
 
-" Automatically clean trailing whitespaces on save
-  fun! <SID>StripTrailingWhitespaces()
-    let l = line(".")
-    let c = col(".")
-    %s/\s\+$//e
-    call cursor(l, c)
-  endfun
+" indentation
+set autoindent
+set smartindent
 
-  autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
+" search tweaks
+set incsearch  " find the next match as we type the search
+set hlsearch   " highlight searches by default
+set ignorecase " ignore case when searching
+set smartcase  " use case if any caps used
 
-" Shortcuts
-    let mapleader = ","
+" format the statusline
+set laststatus=2 " always show the statusline
+set statusline=\%F%m%r%h\ %w\ \⎇\ %{fugitive#statusline()}\ \▲\ %l/%L:%c
 
-  " Ctrl+s
-      noremap <C-s> <esc>:w<CR>
-      inoremap <C-s> <esc>:w<CR>
+" allow backspace in insert mode
+set backspace=indent,eol,start
 
-  " ,nm
-      " Switch type of line numbers
-      " http://stackoverflow.com/questions/4387210/vim-how-to-map-two-tasks-under-one-shortcut-key
-      " Vim 7.3 required
-      let g:relativenumber = 0
-      function! ToogleRelativeNumber()
-        if g:relativenumber == 0
-          let g:relativenumber = 1
-          set norelativenumber
-          set number
-          echo "Show line numbers"
-        elseif g:relativenumber == 1
-          let g:relativenumber = 2
-          set nonumber
-          set relativenumber
-          echo "Show relative line numbers"
-        else
-          let g:relativenumber = 0
-          set nonumber
-          set norelativenumber
-          echo "Show no line numbers"
-        endif
-      endfunction
-      nnoremap <Leader>nm :<C-u>call ToogleRelativeNumber()<cr>
+" disable arrow keys (╯°□°）╯︵ ┻━┻)
+map <Up> <NOP>
+map <Down> <NOP>
+map <Left> <NOP>
+map <Right> <NOP>
 
-  " <Esc><Esc>
-      " Clear the search highlight in Normal mode
-      nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+" jump to the last position when reopening a file
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-  " < >
-      vnoremap < <gv
-      vnoremap > >gv
+" automatically clean trailing whitespaces on save
+fun! <SID>StripTrailingWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfun
+autocmd BufWritePre *.* :call <SID>StripTrailingWhitespaces()
 
-  " ,s
-      " Shortcut for :%s//
-      nnoremap <leader>s :<C-u>%s//<left>
-      vnoremap <leader>s :s//<left>
+" shortcuts
+let mapleader = ","
 
-  " ,ss
-      " Shortcut for :cdo %s//
-      nnoremap <leader>ss :<C-u>cdo %s//<left>
+" can be typed even faster than jj
+imap jj <Esc>
+vmap jj <Esc>
 
-  " Create a new window relative to the current one
-      nnoremap <Leader><left>  :<C-u>leftabove  vnew<CR>
-      nnoremap <Leader><right> :<C-u>rightbelow vnew<CR>
-      nnoremap <Leader><up>    :<C-u>leftabove  new<CR>
-      nnoremap <Leader><down>  :<C-u>rightbelow new<CR>
+" ctrl+s
+nmap <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
 
-  " Can be typed even faster than jk
-    :imap jj <Esc>
-    :vmap jj <Esc>
+" ctrl+q
+nmap <C-q> <esc>:q<CR>
+imap <C-q> <esc>:q<CR>
 
-" Plugins
-  set rtp+=~/.vim/bundle/vundle/
-  call vundle#rc()
+" <esc><esc> => сlear the search highlight in normal mode
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
-  Bundle 'gmarik/vundle'
-  Bundle 'altercation/vim-colors-solarized'
-    let g:solarized_termcolors=16
-    set background=light
-    colorscheme solarized
-  Bundle 'bling/vim-airline'
-  Bundle 'vim-airline/vim-airline-themes'
-    set laststatus=2                " Last window always has a status line
-    let g:airline_theme='solarized'
-    let g:airline_section_x = ''    " Don't display filetype
-    let g:airline_section_y = ''    " Don't display encoding
-    let g:airline_left_sep = ''     " Set custom left separator
-    let g:airline_right_sep = ''    " Set custom right separator
-  Bundle 'airblade/vim-gitgutter'
-  " Use Ag with ack.vim for search
-  Bundle 'mileszs/ack.vim'
-    let g:ackprg = 'ag --vimgrep'
-  Bundle 'kien/ctrlp.vim'
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-  " ag is fast enough that CtrlP doesn't need to cache
-    let g:ctrlp_use_caching = 0
-    let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
-  Bundle 'tpope/vim-vinegar'
-  " set number for tree
-    let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-    let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-  Bundle 'ervandew/supertab'
-  Bundle 'tpope/vim-fugitive'
-  Bundle 'pangloss/vim-javascript'
-  Bundle 'mxw/vim-jsx'
-    let g:jsx_ext_required = 0
-  Bundle 'othree/html5.vim'
-  Bundle 'Raimondi/delimitMate'
-  Bundle 'scrooloose/nerdcommenter'
-  Bundle 'tpope/vim-surround'
-  Bundle 'vim-scripts/UltiSnips'
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpForwardTrigger="<tab>"
-  Bundle 'iamvlado/useful-vim-snippets'
+" < > => move blocks in visual mode
+vmap < <gv
+vmap > >gv
 
-  syntax on
-  filetype plugin indent on
+" ,s => :%s//
+nmap <leader>s :<C-u>%s//<left>
+vmap <leader>s :s//<left>
+
+" netrw
+nmap - :e.<CR>
+
+" create a new window relative to the current one
+nmap <Leader><left>  :<C-u>leftabove  vnew<CR>
+nmap <Leader><right> :<C-u>rightbelow vnew<CR>
+nmap <Leader><up>    :<C-u>leftabove  new<CR>
+nmap <Leader><down>  :<C-u>rightbelow new<CR>
+
+" ,, => no buffer side-effects mode
+function! ToggleSideEffects()
+  if mapcheck("dd", "n") == ""
+    nmap dd "_dd
+    nmap D "_D
+    echo '▲ black hole register on'
+  else
+    unmap dd
+    unmap D
+    echo '▲ black hole register off'
+  endif
+endfunction
+
+nmap ,, :call ToggleSideEffects()<CR>
+
+" // => toggle js comment
+function! CommentToggle()
+  execute ':silent! s/\([^ ]\)/\/\/ \1/'
+  execute ':silent! s/^\( *\)\/\/ \/\/ /\1/'
+endfunction
+map // :call CommentToggle()<CR>
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+" netrw
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_banner = 0
+
+" plugins
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'altercation/vim-colors-solarized'
+  let g:solarized_termtrans=1
+  colorscheme solarized
+  hi VertSplit ctermfg=White ctermbg=White
+  hi StatusLine ctermfg=LightGray ctermbg=DarkCyan
+  hi SignColumn ctermfg=LightGray ctermbg=LightGray
+  hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
+Bundle 'pangloss/vim-javascript'
+Bundle 'maxmellon/vim-jsx-pretty'
+  let g:jsx_ext_required = 0
+Bundle 'tpope/vim-fugitive'
+  map <leader>gs :Gstatus<cr>
+  map <leader>ga :Git add --all<cr>:Gcommit<cr>
+Bundle 'kien/ctrlp.vim'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0 " ag is fast enough
+  let g:ctrlp_working_path_mode = ''
+Bundle 'SirVer/ultisnips'
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+Bundle 'iamvlado/useful-vim-snippets'
+
+" save files that requires sudo without sudo
+cmap w!! w !sudo tee % >/dev/null

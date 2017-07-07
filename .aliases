@@ -1,14 +1,20 @@
-alias zshrc="vim ~/.zshrc"
-alias vimrc="vim ~/.vimrc"
-alias _="sudo "
-alias v="vim"
-alias la="ls -halk"
-alias md="mkdir -p"
+alias zshrc='vim ~/.zshrc'
+alias vimrc='vim ~/.vimrc'
+alias _='sudo '
+alias v='vim'
+alias la='ls -halk'
+alias md='mkdir -p '
+alias :q='exit'
+alias wa='with_anybar '
+alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 
 ## npm
-
-alias s="npm start"
-alias b="npm run build"
-alias d="npm run deploy"
-alias l="npm run lint"
-alias npmL="npm list -g --depth=0"
+alias s='npm start'
+alias b='npm run build'
+alias d='npm run deploy'
+alias l='npm run lint'
+alias t='npm test'
+alias npmG='npm i -g '
+alias npmS='npm i -S '
+alias npmD='npm i -D '
+alias npmL='npm list -g --depth=0'
