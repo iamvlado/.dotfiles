@@ -44,6 +44,12 @@ brew install the_silver_searcher
 + [Gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
 + [Keyboard shortcuts for Gmail](https://support.google.com/mail/answer/6594?hl=en) — save time navigating in Gmail by using keyboard shortcuts.
 
+## macOS tips & tricks — some useful productivity hacks
++ **In Finder, press `Shift+Cmd+.` to toggle hidden files.** Works in the Open and Save dialog too
++ **Switch from Spotlight to Google.** If you need to ditch Spotlight in favor of Google for a particular search, you can easily do so. Hit `Command-B` to open a new tab in your default browser using your default search engine
++ **Resize a window while holding down the `Option key` to resize from the center.** Press `Shift` to keep the aspect ratio. Press both keys to do both
++ **Press the `Option key` in a file context menu to get the ability to copy the path of the file.** For plain text destinations like the terminal, you can also press `Cmd+C` with the file selected and then `Cmd+V` in the terminal to paste the file path
+
 ## other
 + [Solarized](http://ethanschoonover.com/solarized) — precision colors for machines and people
 + [Fabulous macOS Tips & Tricks](https://blog.sindresorhus.com/macos-tips-tricks-13046cf377f8#.akgfqk1uo) — some useful productivity hacks
