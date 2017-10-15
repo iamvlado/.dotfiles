@@ -18,3 +18,7 @@ alias npmG='npm i -g '
 alias npmS='npm i -S '
 alias npmD='npm i -D '
 alias npmL='npm list -g --depth=0'
+
+## git
+alias gc='git checkout '
+alias gb='git checkout -b '

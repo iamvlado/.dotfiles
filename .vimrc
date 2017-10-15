@@ -10,6 +10,7 @@ set nolazyredraw      " fix vim render
 set clipboard=unnamed " use macOS clipboard
 set history=1000      " increase history
 set timeoutlen=250    " solves: there is a pause when leaving insert mode
+set autochdir         " change dir to the current buffer when opening files
 
 " no backups
 set nobackup
