@@ -8,11 +8,11 @@ syntax on
 
 set nolazyredraw      " fix vim render
 set clipboard=unnamed " use macOS clipboard
-set history=1000      " increase history
+set history=500       " increase history
 set timeoutlen=250    " solves: there is a pause when leaving insert mode
 set autochdir         " change dir to the current buffer when opening files
 
-" no backups
+" turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 set noswapfile
 set nowb
@@ -26,7 +26,7 @@ set noerrorbells
 " specify undodir (https://jovicailic.org/2017/04/vim-persistent-undo/)
 set undodir=~/.vim_runtime/undodir
 set undofile
-set undoreload=10000
+set undoreload=5000
 
 " ui/ux tweaks
 set shortmess=I    " don't show the intro message starting vim
@@ -111,6 +111,11 @@ nmap <Leader><left>  :<C-u>leftabove  vnew<CR>
 nmap <Leader><right> :<C-u>rightbelow vnew<CR>
 nmap <Leader><up>    :<C-u>leftabove  new<CR>
 nmap <Leader><down>  :<C-u>rightbelow new<CR>
+
+" pretty up JSON data
+nnoremap <Leader>j !!python -m json.tool<CR>
+nnoremap <Leader>J :%!python -m json.tool<CR>
+xnoremap <Leader>j :!python -m json.tool<CR>
 
 " ,, => no buffer side-effects mode
 function! ToggleSideEffects()
