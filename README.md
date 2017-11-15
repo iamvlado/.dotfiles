@@ -6,18 +6,19 @@
 # dotfiles
 git clone --recursive https://github.com/iamvlado/.dotfiles && ~/.dotfiles/init
 
-# Vim's things
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# vim-plug — a minimalist vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-# Oh My Zsh
+# oh my zsh
 sh -c "$(curl -fsSL
 https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-# The Silver Searcher
+# the silver Searcher
 brew install the_silver_searcher
 ```
 
-## CLI
+## cli
 + [The Silver Searcher](https://github.com/ggreer/the_silver_searcher) — a code-searching tool similar to ack, but faster
 
 ## npm
