@@ -6,9 +6,9 @@ filetype off
 filetype plugin indent on " enabling indentation and plugins for specific files
 syntax on
 
-set nolazyredraw      " fix vim render
+set lazyredraw      " fix vim render
 set clipboard=unnamed " use macOS clipboard
-set history=500       " increase history
+set history=500      " increase history
 set timeoutlen=250    " solves: there is a pause when leaving insert mode
 set autochdir         " change dir to the current buffer when opening files
 
@@ -148,32 +148,34 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner = 0
 
 " plugins
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'altercation/vim-colors-solarized'
-  let g:solarized_termtrans=1
-  colorscheme solarized
-  hi VertSplit ctermfg=White ctermbg=White
-  hi StatusLine ctermfg=LightGray ctermbg=DarkCyan
-  hi SignColumn ctermfg=LightGray ctermbg=LightGray
-  hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
-Bundle 'pangloss/vim-javascript'
-Bundle 'maxmellon/vim-jsx-pretty'
+call plug#begin('~/.vim/plugged')
+Plug 'altercation/vim-colors-solarized'
+Plug 'pangloss/vim-javascript'
+Plug 'maxmellon/vim-jsx-pretty'
   let g:jsx_ext_required = 0
-Bundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
   map <leader>gs :Gstatus<cr>
   map <leader>ga :Git add --all<cr>:Gcommit<cr>
-Bundle 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim'
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0 " ag is fast enough
   let g:ctrlp_working_path_mode = ''
-Bundle 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<tab>"
   let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
-Bundle 'iamvlado/useful-vim-snippets'
+Plug 'iamvlado/useful-vim-snippets'
+call plug#end()
+
+" colorscheme
+colorscheme solarized
+hi VertSplit ctermfg=White ctermbg=White
+hi StatusLine ctermfg=LightGray ctermbg=DarkCyan
+hi SignColumn ctermfg=LightGray ctermbg=LightGray
+hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
+
+" vim => es6 {improved syntax highlighting}
+augroup filetype javascript syntax=javascript
 
 " save files that requires sudo without sudo
 cmap w!! w !sudo tee % >/dev/null
