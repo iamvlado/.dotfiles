@@ -1,15 +1,7 @@
-set nocompatible " this must be first
-set ttyfast      " indicates a fast terminal connection
-
 " syntax
-filetype off
-filetype plugin indent on " enabling indentation and plugins for specific files
 syntax on
 
-set lazyredraw      " fix vim render
 set clipboard=unnamed " use macOS clipboard
-set history=500      " increase history
-set timeoutlen=250    " solves: there is a pause when leaving insert mode
 set autochdir         " change dir to the current buffer when opening files
 
 " turn backup off, since most stuff is in SVN, git et.c anyway...
@@ -30,27 +22,26 @@ set undoreload=5000
 
 " ui/ux tweaks
 set shortmess=I    " don't show the intro message starting vim
+set number         " Show current line number as absolute number
 set relativenumber " display relative numbers
+set numberwidth=2  " Numbers are 1 char wide
 set colorcolumn=81 " show bad and extrabad line sizes
-set scrolloff=8    " start scrolling when we're 8 lines away from margins
 set lbr            " will wrap long lines between words
 set mouse=a        " mouse support in normal mode
 
 " no tabs or spaces
-set tabstop=2
-set shiftwidth=2
-set smarttab
-set et
+set tabstop=2               " tab = 2 spaces
+set shiftwidth=2            " tab press = 2 spaces
+set softtabstop=2 expandtab " tab => spaces
 
 " indentation
 set autoindent
 set smartindent
 
 " search tweaks
-set incsearch  " find the next match as we type the search
-set hlsearch   " highlight searches by default
-set ignorecase " ignore case when searching
-set smartcase  " use case if any caps used
+set incsearch  " Do highlight phrases while searching
+set nohlsearch " Don't continue to highlight searched phrases
+set ignorecase " Case insensitive search
 
 " format the statusline
 set laststatus=2 " always show the statusline
@@ -64,6 +55,10 @@ map <Up> <NOP>
 map <Down> <NOP>
 map <Left> <NOP>
 map <Right> <NOP>
+
+" Change cursor based on mode
+let &t_SI = "\e[6 q" " Steady bar in insert mode
+let &t_EI = "\e[2 q" " Steady block in normal/visual modes
 
 " jump to the last position when reopening a file
 au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
@@ -92,9 +87,6 @@ imap <C-s> <esc>:w<CR>
 nmap <C-q> <esc>:q<CR>
 imap <C-q> <esc>:q<CR>
 
-" <esc><esc> => сlear the search highlight in normal mode
-nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
-
 " < > => move blocks in visual mode
 vmap < <gv
 vmap > >gv
@@ -103,8 +95,9 @@ vmap > >gv
 nmap <leader>s :<C-u>%s//<left>
 vmap <leader>s :s//<left>
 
-" netrw
-nmap - :e.<CR>
+" automatically read changed files from disk, see https://unix.stackexchange.com/a/383044
+set autoread
+au FocusGained,BufEnter * :checktime " Also reload when we switch buffers
 
 " create a new window relative to the current one
 nmap <Leader><left>  :<C-u>leftabove  vnew<CR>
@@ -143,16 +136,21 @@ map // :call CommentToggle()<CR>
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 " netrw
+nmap - :e.<CR>
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_banner = 0
+
+" automatically read changed files from disk,
+" see https://unix.stackexchange.com/a/383044
+set autoread
+au FocusGained,BufEnter * :checktime " Also reload when we switch buffers
 
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'altercation/vim-colors-solarized'
 Plug 'pangloss/vim-javascript'
 Plug 'maxmellon/vim-jsx-pretty'
-  let g:jsx_ext_required = 0
 Plug 'tpope/vim-fugitive'
   map <leader>gs :Gstatus<cr>
   map <leader>ga :Git add --all<cr>:Gcommit<cr>
@@ -160,6 +158,7 @@ Plug 'kien/ctrlp.vim'
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
   let g:ctrlp_use_caching = 0 " ag is fast enough
   let g:ctrlp_working_path_mode = ''
+Plug 'jiangmiao/auto-pairs'
 Plug 'SirVer/ultisnips'
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<tab>"
