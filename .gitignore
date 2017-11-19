@@ -2,22 +2,8 @@
 # Global gitignore
 #
 
-build
-dist
-public
-node_modules
-gh-cache
-^\.*
-!.gitignore
-!.bowerrc
-.DS_Store
+# Fuck vims .swp files
 *.swp
-.DS_Store?
-._*
-.gtd
-.byobu/.ssh-agent
-lib
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
+
+# Fuck MacOS
+.DS_Store

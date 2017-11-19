@@ -6,16 +6,36 @@
 # dotfiles
 git clone --recursive https://github.com/iamvlado/.dotfiles && ~/.dotfiles/init
 
-# vim-plug — a minimalist vim plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
 # oh my zsh
 sh -c "$(curl -fsSL
 https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
+# tmux with macOS clipboard integration
+brew install tmux
+brew install reattach-to-user-namespace
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+  # managing plugins via the command line
+  # installing plugins. As usual, plugins need to be specified in .tmux.conf.
+  # run the following command to install plugins:
+  ~/.tmux/plugins/tpm/bin/install_plugins
+
+  # updating plugins
+  ~/.tmux/plugins/tpm/bin/update_plugins all
+
+  # or update a single plugin
+  ~/.tmux/plugins/tpm/bin/update_plugins tmux-sensible
+
+  # removing plugins
+  ~/.tmux/plugins/tpm/bin/clean_plugins
+
+# vim-plug — a minimalist vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 # the silver Searcher
 brew install the_silver_searcher
+
 ```
 
 ## cli
