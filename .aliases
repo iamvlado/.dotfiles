@@ -7,23 +7,16 @@ alias tmuxrc='vim ~/.tmux.conf'
 alias _='sudo '
 alias v='vim'
 alias la='ls -halk'
-alias md='mkdir -p '
 alias wa='with_anybar '
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias :q='exit'
 
-# dotfiles
-alias dot='vim ~/.dotfiles'
-
-# projects
-alias p='vim ~/Documents'
-
 # tmux
-alias tt="tmux"
-alias ttk="tmux kill-session -t"
-alias ttpi="~/.tmux/plugins/tpm/bin/install_plugins"
-alias ttpu="~/.tmux/plugins/tpm/bin/update_plugins all"
-alias ttpc="~/.tmux/plugins/tpm/bin/clean_plugins"
+alias tt='tmux'
+alias ttk='tmux kill-session -t'
+alias ttpi='~/.tmux/plugins/tpm/bin/install_plugins'
+alias ttpu='~/.tmux/plugins/tpm/bin/update_plugins all'
+alias ttpc='~/.tmux/plugins/tpm/bin/clean_plugins'
 
 # npm
 alias s='npm start'
@@ -35,6 +28,7 @@ alias npmG='npm i -g '
 alias npmS='npm i -S '
 alias npmD='npm i -D '
 alias npmL='npm list -g --depth=0'
+alias npmR='rm -rf node_modules && npm install'
 
 ## git
 alias gc='git checkout '
@@ -44,5 +38,5 @@ alias gb='git checkout -b '
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
 
 ## macOS
-alias ql='qlmanage -p 2>/dev/null' # quick look
-alias oo='open .' # open current directory in Finder
+alias ql='qlmanage -p 2>/dev/null'
+alias oo='open .'
