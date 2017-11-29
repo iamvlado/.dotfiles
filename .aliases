@@ -6,6 +6,7 @@ alias tmuxrc='vim ~/.tmux.conf'
 # used
 alias _='sudo '
 alias v='vim'
+alias ia='open $1 -a /Applications/iA\ Writer.app'
 alias la='ls -halk'
 alias wa='with_anybar '
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
@@ -29,10 +30,6 @@ alias npmS='npm i -S '
 alias npmD='npm i -D '
 alias npmL='npm list -g --depth=0'
 alias npmR='rm -rf node_modules && npm install'
-
-## git
-alias gc='git checkout '
-alias gb='git checkout -b '
 
 ## brew
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'
