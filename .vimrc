@@ -1,5 +1,7 @@
 set nocompatible   " improved mode
 
+set clipboard=unnamed " clipboard integration
+set encoding=utf-8 " encoding UTF-8
 set history=1000   " remember more commands and search history
 set shortmess=I    " don't show the intro message starting vim
 set number         " show current line number as absolute number
@@ -8,11 +10,10 @@ set numberwidth=2  " numbers are 1 char wide
 set colorcolumn=80 " show bad and extrabad line sizes
 set lbr            " will wrap long lines between words
 set mouse=a        " mouse support in normal mode
-set nojoinspaces   " only insert single space after a '.', '?' and '!' with a join command
+set nojoinspaces   " single space after a '.', '?' and '!' with a join command
 setl nofen         " no fold enable
-set backspace=indent,eol,start " macOS stupid backspace fix
-let &t_SI = "\e[6 q"           " cursor steady bar in insert mode
-let &t_EI = "\e[2 q"           " cursor steady block in normal/visual modes
+let &t_SI = "\e[6 q" " cursor steady bar in insert mode
+let &t_EI = "\e[2 q" " cursor steady block in normal/visual modes
 
 " turn backup off, since most stuff is in SVN, git
 set nobackup
@@ -31,7 +32,6 @@ set undolevels=1000  " max number of changes that can be undone
 set undoreload=10000 " max number lines to save for undo on buffer reload
 
 " indentation
-set autoindent
 set smartindent
 set tabstop=2               " tab = 2 spaces
 set shiftwidth=2            " tab press = 2 spaces
@@ -43,8 +43,7 @@ set nohlsearch " don't continue to highlight searched phrases
 set ignorecase " case insensitive search
 
 " statusline
-set laststatus=2 " always show the statusline
-set stl=%<%f\ %h%m%r\▲\ %l/%L:%c
+set stl=%f\ %h%m%r\ %l/%L:%c
 
 " disable arrow keys (╯°□°）╯︵ ┻━┻)
 map <Up> <NOP>
@@ -88,10 +87,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " add the silver searcher to the runtimepath
 set rtp+=/usr/local/opt/fzf
 
-" automatically read changed files (https://unix.stackexchange.com/a/383044)
-set autoread
-au FocusGained,BufEnter * :checktime " also reload when we switch buffers
-
 " automatically clean trailing whitespaces on save
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
@@ -112,6 +107,7 @@ let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " plugins
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-sensible'
 Plug 'altercation/vim-colors-solarized'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -123,6 +119,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'matze/vim-move'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
+Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 Plug 'iamvlado/useful-vim-snippets'
 Plug 'tomtom/tcomment_vim'
@@ -135,9 +132,7 @@ colorscheme solarized
 
 hi VertSplit ctermfg=White ctermbg=White
 hi StatusLine ctermfg=LightGray ctermbg=DarkCyan
-hi SignColumn ctermfg=LightGray ctermbg=LightGray
 hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
-hi QuickFixLine ctermfg=None ctermbg=None
 " }}}
 
 " vim-jsx
