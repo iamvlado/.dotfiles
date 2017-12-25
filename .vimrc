@@ -106,6 +106,10 @@ let g:netrw_banner = 0
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
+" automatically read changed files from disk, see https://unix.stackexchange.com/a/383044
+set autoread
+au FocusGained,BufEnter * :checktime " Also reload when we switch buffers
+
 " plugins
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
@@ -114,7 +118,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jparise/vim-graphql'
-Plug 'plasticboy/vim-markdown'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'matze/vim-move'
@@ -139,12 +142,7 @@ hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
 " vim-jsx
 let g:jsx_ext_required=0 " highlight JSX in .js files
 
-" vim-markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_frontmatter = 1
-
 " vim-fzf
-nmap <C-p> :Files<CR>
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -159,6 +157,14 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+function! s:find_git_root()
+  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
+command! ProjectFiles execute 'Files' s:find_git_root()
+
+nmap <C-p> :ProjectFiles<CR>
 
 " vim-move
 let g:move_key_modifier = 'C'
