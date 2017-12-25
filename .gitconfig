@@ -1,6 +1,6 @@
 [user]
-  name = vlado
-  email = vladocode@gmail.com
+	name = vlado
+	email = vladocode@gmail.com
 [core]
   editor = vim
 [color]

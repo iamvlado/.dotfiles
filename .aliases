@@ -8,7 +8,6 @@ alias _='sudo '
 alias v='vim'
 alias ia='open $1 -a /Applications/iA\ Writer.app'
 alias la='ls -halk'
-alias wa='with_anybar '
 alias ip='dig +short myip.opendns.com @resolver1.opendns.com'
 alias :q='exit'
 
@@ -24,12 +23,13 @@ alias s='npm start'
 alias b='npm run build'
 alias d='npm run deploy'
 alias l='npm run lint'
+alias f='npm run format'
 alias t='npm run test'
 alias npmG='npm i -g '
 alias npmS='npm i -S '
 alias npmD='npm i -D '
 alias npmL='npm list -g --depth=0'
-alias npmR='rm -rf node_modules && npm install'
+alias npmI="rm -rf node_modules/ && rm -f package-lock.json && npm i"
 
 ## brew
 alias bu='brew update; brew upgrade; brew cleanup; brew doctor'

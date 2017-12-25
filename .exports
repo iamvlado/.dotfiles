@@ -17,19 +17,19 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 
-# Path
+# path
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=$DOTFILES/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
-# Node
+# node
 export NODE_ENV=development
 export PATH="$HOME/.node_modules_global/bin:$PATH"
 
-# Go
+# go
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin/:$PATH
 
-# Ruby
+# ruby
 export PATH=$HOME/.rbenv/bin:$PATH

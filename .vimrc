@@ -11,6 +11,7 @@ set colorcolumn=80 " show bad and extrabad line sizes
 set lbr            " will wrap long lines between words
 set mouse=a        " mouse support in normal mode
 set nojoinspaces   " single space after a '.', '?' and '!' with a join command
+set autochdir      " automatically change the current directory
 setl nofen         " no fold enable
 let &t_SI = "\e[6 q" " cursor steady bar in insert mode
 let &t_EI = "\e[2 q" " cursor steady block in normal/visual modes
@@ -79,7 +80,7 @@ nmap <Leader><down>  :<C-u>rightbelow new<CR>
 nmap X "_d
 nmap XX "_dd
 vmap X "_d
-vmap x "_d
+vmap X "_d
 
 " highlight VCS conflict
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
