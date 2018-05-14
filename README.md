@@ -60,6 +60,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 brew install fzf
 ```
 
+## cli
++ [ntl](https://github.com/ruyadorno/ntl) - Npm Task List: interactive cli menu to list/run npm tasks
+
 ## npm
 + [npm-check](https://www.npmjs.com/package/npm-check) — check for outdated, incorrect, and unused dependencies
 
