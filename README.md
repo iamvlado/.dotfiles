@@ -61,32 +61,33 @@ brew install fzf
 ```
 
 ## cli
-+ [ntl](https://github.com/ruyadorno/ntl) - Npm Task List: interactive cli menu to list/run npm tasks
++ [ntl](https://github.com/ruyadorno/ntl) - interactive cli menu to list/run npm tasks
++ [trash](https://github.com/sindresorhus/trash-cli) — move files and folders to the trash
 
 ## npm
 + [npm-check](https://www.npmjs.com/package/npm-check) — check for outdated, incorrect, and unused dependencies
 
 ## fonts
-+ [FiraCode](https://github.com/tonsky/FiraCode) — Fira Code: monospaced font with programming ligatures
++ [firacode](https://github.com/tonsky/FiraCode) — monospaced font with programming ligatures
 
-## apps
+## macos apps
++ [amphetamine](https://itunes.apple.com/app/amphetamine/id937984704?mt=12) — you can effortlessly override your energy saver settings and keep your mac awake
++ [appcleaner](https://freemacsoft.net/appcleaner/) — which allows you to thoroughly uninstall unwanted apps
 + [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
-+ [iA Writer](https://ia.net/writer/) — iA Writer is designed to provide the best writing experience
-+ [Telegram](https://telegram.org/) — a new era of messaging
++ [transmission](https://transmissionbt.com/download/) — a fast, easy, and free bittorrent client
 
-## Chrome plugins
-+ [Pesticide](http://pesticide.io/) — for quickly debugging css layout issues by toggling different colored outlines on every element
-+ [WhatFont](http://www.chengyinliu.com/whatfont.html) — the easiest way to identify fonts on web pages
+## chrome plugins
++ [pesticide](https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh) — for quickly debugging css layout issues by toggling different colored outlines on every element
++ [whatfont](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) — the easiest way to identify fonts on web pages
++ [dimensions](https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj?hl=en) — a tool for designers to measure screen dimensions
 
-## Gmail
-+ [Gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
-+ [Keyboard shortcuts for Gmail](https://support.google.com/mail/answer/6594?hl=en) — save time navigating in Gmail by using keyboard shortcuts.
+## gmail
++ [gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
++ [keyboard shortcuts](https://support.google.com/mail/answer/6594?hl=en) — save time navigating in gmail by using keyboard shortcuts
 
-## macOS tips & tricks — some useful productivity hacks
-+ **In Finder, press `Shift+Cmd+.` to toggle hidden files.** Works in the Open and Save dialog too
-+ **Switch from Spotlight to Google.** If you need to ditch Spotlight in favor of Google for a particular search, you can easily do so. Hit `Command-B` to open a new tab in your default browser using your default search engine
-+ **Resize a window while holding down the `Option key` to resize from the center.** Press `Shift` to keep the aspect ratio. Press both keys to do both
-+ **Press the `Option key` in a file context menu to get the ability to copy the path of the file.** For plain text destinations like the terminal, you can also press `Cmd+C` with the file selected and then `Cmd+V` in the terminal to paste the file path
+## macos useful productivity hacks
++ hit `command-b` to open a new tab in your default browser using your default search engine
++ in finder, press `shift+cmd+.` to toggle hidden files
 
-## other
-+ [Fabulous macOS Tips & Tricks](https://blog.sindresorhus.com/macos-tips-tricks-13046cf377f8#.akgfqk1uo) — some useful productivity hacks
+## must read
++ [fabulous macos tips & tricks](https://blog.sindresorhus.com/macos-tips-tricks-13046cf377f8#.akgfqk1uo)
