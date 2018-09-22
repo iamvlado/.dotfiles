@@ -1,10 +1,8 @@
 [user]
-	name = vlado
-	email = vladocode@gmail.com
+	name = vladislav.santsevich
+	email = vladislav.santsevich@maxpay.com
 [core]
   editor = vim
-[color]
-  ui = true
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -19,47 +17,8 @@
   added = yellow
   changed = green
   untracked = cyan
-[core]
-  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-[diff]
-  # Github style word diffs
-  wordRegex = [^[:space:]]
-[alias]
-  aa = add .
-  st = status -sb
-  ci = commit -S
-  br = branch
-  co = checkout
-  dw = diff --word-diff --color-words
-  df = diff
-  lg = log --oneline --decorate
-  lc = log -p -n1
-  lol = log --pretty=oneline --abbrev-commit --graph --decorate
-  f = fetch
-  ff = merge --ff-only
-  poo = push
-  ll = log --show-signature
-  sh = show --show-signature
-[url "git@github.com:"]
-  insteadOf = "gh:"
-  pushInsteadOf = "github:"
-  pushInsteadOf = "git://github.com/"
-[url "git://github.com/"]
-  insteadOf = "github:"
-[url "git@gist.github.com:"]
-  insteadOf = "gst:"
-  pushInsteadOf = "gist:"
-  pushInsteadOf = "git://gist.github.com/"
-[url "git://gist.github.com/"]
-  insteadOf = "gist:"
-[push]
-  default = tracking
-[help]
-  autocorrect = 1
-[credential]
-  helper = cache --timeout 3600
 [filter "lfs"]
+	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-	clean = git-lfs clean -- %f

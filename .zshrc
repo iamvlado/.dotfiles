@@ -18,3 +18,6 @@ source $DOTFILES/.aliases
 
 # allow <c-s> in vim
 vim() STTY=-ixon command vim "$@"
+
+# for vim with clipboard brew install vim & =>
+export PATH=/usr/local/bin:$PATH

@@ -1,6 +1,5 @@
 set nocompatible   " improved mode
 
-set clipboard=unnamed " clipboard integration
 set encoding=utf-8 " encoding UTF-8
 set history=1000   " remember more commands and search history
 set shortmess=I    " don't show the intro message starting vim
@@ -88,6 +87,15 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " add the silver searcher to the runtimepath
 set rtp+=/usr/local/opt/fzf
 
+" yank to clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
+
 " automatically clean trailing whitespaces on save
 fun! <SID>StripTrailingWhitespaces()
   let l = line(".")
@@ -127,13 +135,13 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'SirVer/ultisnips'
 Plug 'iamvlado/useful-vim-snippets'
 Plug 'tomtom/tcomment_vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 call plug#end()
 
 " vim-colors-solarized {{{
 colorscheme solarized
-
 hi VertSplit ctermfg=White ctermbg=White
 hi StatusLine ctermfg=LightGray ctermbg=DarkCyan
 hi StatusLineNC ctermfg=LightGray ctermbg=LightGray
