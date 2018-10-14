@@ -3,10 +3,12 @@ set nocompatible   " improved mode
 set encoding=utf-8 " encoding UTF-8
 set history=1000   " remember more commands and search history
 set shortmess=I    " don't show the intro message starting vim
+set cursorline     " highlight current line
 set number         " show current line number as absolute number
 set relativenumber " display relative numbers
 set numberwidth=2  " numbers are 1 char wide
 set colorcolumn=80 " show bad and extrabad line sizes
+set showmatch      " % cursor will briefly jump to the matching brace
 set lbr            " will wrap long lines between words
 set mouse=a        " mouse support in normal mode
 set nojoinspaces   " single space after a '.', '?' and '!' with a join command
@@ -110,13 +112,14 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 
 " netrw
 nmap - :e.<CR>
-let g:netrw_banner = 0
+let g:netrw_banner = 0                         " hide banner
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+' " hide swp
+let g:netrw_liststyle = 3                      " set tree style listing
 let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
-let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 
 " automatically read changed files from disk, see https://unix.stackexchange.com/a/383044
 set autoread
-au FocusGained,BufEnter * :checktime " Also reload when we switch buffers
+au FocusGained,BufEnter * :checktime " also reload when we switch buffers
 
 " plugins
 call plug#begin('~/.vim/plugged')
@@ -124,11 +127,8 @@ Plug 'tpope/vim-sensible'
 Plug 'altercation/vim-colors-solarized'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'matze/vim-move'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'vim-scripts/AutoComplPop'
