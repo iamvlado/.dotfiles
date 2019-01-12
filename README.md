@@ -26,12 +26,25 @@
 ## install
 
 ```zsh
+# instal brew
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# node, fzf
+brew install node
+brew install fzf
+
+# oh my zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # dotfiles
 git clone --recursive https://github.com/iamvlado/.dotfiles && ~/.dotfiles/init
 
-# oh my zsh
-sh -c "$(curl -fsSL
-https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# vim-plug — a minimalist vim plugin manager
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# vim :PlugInstal
+
+# restart terminal.app
 
 # tmux with macOS clipboard integration
 brew install tmux
@@ -51,35 +64,19 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
   # removing plugins
   ~/.tmux/plugins/tpm/bin/clean_plugins
-
-# vim-plug — a minimalist vim plugin manager
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# fzf
-brew install fzf
 ```
 
-## cli
-+ [ntl](https://github.com/ruyadorno/ntl) - interactive cli menu to list/run npm tasks
-+ [trash](https://github.com/sindresorhus/trash-cli) — move files and folders to the trash
-
-## npm
-+ [npm-check](https://www.npmjs.com/package/npm-check) — check for outdated, incorrect, and unused dependencies
-
-## fonts
+## font
 + [firacode](https://github.com/tonsky/FiraCode) — monospaced font with programming ligatures
+
+## cli
++ [trash](https://github.com/sindresorhus/trash-cli) — move files and folders to the trash
 
 ## macos apps
 + [amphetamine](https://itunes.apple.com/app/amphetamine/id937984704?mt=12) — you can effortlessly override your energy saver settings and keep your mac awake
 + [appcleaner](https://freemacsoft.net/appcleaner/) — which allows you to thoroughly uninstall unwanted apps
 + [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
 + [transmission](https://transmissionbt.com/download/) — a fast, easy, and free bittorrent client
-
-## chrome plugins
-+ [pesticide](https://chrome.google.com/webstore/detail/pesticide-for-chrome/bblbgcheenepgnnajgfpiicnbbdmmooh) — for quickly debugging css layout issues by toggling different colored outlines on every element
-+ [whatfont](https://chrome.google.com/webstore/detail/whatfont/jabopobgcpjmedljpbcaablpmlmfcogm?hl=en) — the easiest way to identify fonts on web pages
-+ [dimensions](https://chrome.google.com/webstore/detail/dimensions/baocaagndhipibgklemoalmkljaimfdj?hl=en) — a tool for designers to measure screen dimensions
 
 ## gmail
 + [gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
