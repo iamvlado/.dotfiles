@@ -77,6 +77,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 + [appcleaner](https://freemacsoft.net/appcleaner/) — which allows you to thoroughly uninstall unwanted apps
 + [spectacleapp](https://www.spectacleapp.com) — move and resize windows with ease
 + [transmission](https://transmissionbt.com/download/) — a fast, easy, and free bittorrent client
++ [tunnelblick](https://tunnelblick.net/downloads.html) — is a free, open source graphic user interface for OpenVPN®
 
 ## gmail
 + [gmail setup](https://iamstarkov.com/gmail-setup/) — gmail is not very friendly by default
