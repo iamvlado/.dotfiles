@@ -39,5 +39,6 @@ alias ql='qlmanage -p 2>/dev/null'
 alias oo='open .'
 
 ## useful
-alias diff='arc diff origin/live'
+alias u='make up'
+alias d='make down'
 alias gbg='git branch --all | grep'

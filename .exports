@@ -24,7 +24,6 @@ export PATH=$DOTFILES/bin:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
 # node
-export NODE_ENV=development
 export PATH="$HOME/.node_modules_global/bin:$PATH"
 
 # go

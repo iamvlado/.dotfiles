@@ -1,6 +1,6 @@
 [user]
-	name = vlado
-	email = vladocode@gmail.com
+	name = vladislav.santsevich
+	email = vladislav.santsevich@maxpay.com
 [core]
   editor = vim
 [color "branch"]
@@ -22,3 +22,7 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+
+# This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
+[include]
+  path = /Users/sv/.netlify/helper/git-config
